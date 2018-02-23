@@ -6,7 +6,7 @@ output:
 ---
 
 ```{r}
-tab = read.csv("https://github.com/carlmartinkeerberg/ARGO2CSV/raw/master/IIetapp.csv",
+tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/IIetapp.csv",
                header = T,
                sep = ";",
                encoding = "UTF-8",
