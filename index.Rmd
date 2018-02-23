@@ -4,6 +4,4 @@ output:
   html_document:
     df_print: paged
 ---
-
-#KKEMV statistiline analüüs
 ##Kasutatud R-i ja ARGO .atab faile, mis on teisendatud .csv failideks (kasutades [ARGO2CSV-d](https://carlmartinkeerberg.github.io/WebSite/argo2csv.html)).
