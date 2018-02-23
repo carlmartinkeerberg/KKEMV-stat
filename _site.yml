@@ -1,12 +1,16 @@
-﻿name: "KKEMV Statistika"
+name: KKEMV Statistika
 navbar:
-  title: "KKEMV Statistika"
+  title: KKEMV Statistika
   left:
-    - text: "Avaleht"
-      href: index.html
-    - text: "I etapp 2017/18"
-      href: kkemv1.html
-    - text: "II etapp 2017/18"
-      href: kkemv2.html 
+  - text: Avaleht
+    href: index.html
+  - text: I etapp 2017/18
+    href: kkemv1.html
+  - text: II etapp 2017/18
+    href: kkemv2.html
+output_dir: .
+output:
+  html_document:
+    lib_dir: site_libs
+    self_contained: no
 
-output_dir: "."

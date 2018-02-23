@@ -205,7 +205,35 @@ $(document).ready(function () {
 </div>
 
 
+<pre class="r"><code>tab = read.csv(&quot;https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/Ietapp.csv&quot;,
+               header = T,
+               sep = &quot;;&quot;,
+               encoding = &quot;UTF-8&quot;,
+               dec = &quot;.&quot;,
+               stringsAsFactors = F)
 
+speakers = tab[c(1:93),]
+
+alltotalavg = na.omit(as.numeric(speakers$TOTALAVG))
+
+meantotalavg = mean(na.omit(as.numeric(speakers$TOTALAVG)))
+
+hist(alltotalavg,
+     main = &quot;Keskmised spiikripunktid&quot;,
+     xlab = &quot;Punktid&quot;,
+     ylab = &quot;Sagedus&quot;,
+     xlim = c(60, 80),
+     breaks = 6)
+
+abline(v = meantotalavg,
+       col = &quot;blue&quot;,
+       lwd = 2.5)
+
+legend(73, 20,
+       c(&quot;Aritm keskmine&quot;),
+       lwd = c(2.5),
+       col = c(&quot;blue&quot;))</code></pre>
+<p><img src="kkemv1_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 
 
 

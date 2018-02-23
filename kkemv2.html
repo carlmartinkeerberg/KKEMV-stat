@@ -222,13 +222,14 @@ hist(alltotalavg,
      main = &quot;Keskmised spiikripunktid&quot;,
      xlab = &quot;Punktid&quot;,
      ylab = &quot;Sagedus&quot;,
+     xlim = c(60, 80),
      breaks = 6)
 
 abline(v = meantotalavg,
        col = &quot;blue&quot;,
        lwd = 2.5)
 
-legend(72.25, 20,
+legend(73, 20,
        c(&quot;Aritm keskmine&quot;),
        lwd = c(2.5),
        col = c(&quot;blue&quot;))</code></pre>
@@ -236,9 +237,9 @@ legend(72.25, 20,
 <pre class="r"><code>library(knitr)
 
 kable(speakers,
-      caption = &quot;V?itlejad&quot;)</code></pre>
+      caption = &quot;Väitlejad&quot;)</code></pre>
 <table>
-<caption>V?itlejad</caption>
+<caption>Väitlejad</caption>
 <thead>
 <tr class="header">
 <th align="left">SPEAKER</th>
