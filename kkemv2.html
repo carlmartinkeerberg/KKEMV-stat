@@ -206,13 +206,14 @@ $(document).ready(function () {
 
 
 <pre class="r"><code>tab = read.csv(&quot;https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/IIetapp.csv&quot;,
-               header = T,
+               header = F,
                sep = &quot;;&quot;,
                encoding = &quot;UTF-8&quot;,
                dec = &quot;.&quot;,
-               stringsAsFactors = F)
-
-speakers = tab[c(1:62),]
+               stringsAsFactors = F)</code></pre>
+<pre class="r"><code>speakers = data.frame(tab[c(2:63),])
+speakers_header = c(tab[c(1), ])
+names(speakers) = speakers_header
 
 alltotalavg = na.omit(as.numeric(speakers$TOTALAVG))
 
@@ -233,7 +234,7 @@ legend(73, 20,
        c(&quot;Aritm keskmine&quot;),
        lwd = c(2.5),
        col = c(&quot;blue&quot;))</code></pre>
-<p><img src="kkemv2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="kkemv2_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>totalspeakers = na.omit(data.frame(speakers$SPEAKER, as.numeric(speakers$TOTALAVG)))
 
 bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG.),]
@@ -241,6 +242,9 @@ bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG
 print(bestspeaker)</code></pre>
 <pre><code>##    speakers.SPEAKER as.numeric.speakers.TOTALAVG.
 ## 43 James Paul Arney                         74.13</code></pre>
+<pre class="r"><code>teams = data.frame(tab[c(65:82), c(1:27)])
+teams_header = c(tab[c(64), c(1:27)])
+names(teams) = teams_header</code></pre>
 
 
 
