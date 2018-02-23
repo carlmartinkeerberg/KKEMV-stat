@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1519393920701.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "715297832",
+    "id" : "4739779",
+    "lastKnownWriteTime" : 1519392149,
+    "last_content_update" : 1519393995456,
+    "path" : "~/GitHub/KKEMV-stat/kkemv2.Rmd",
+    "project_path" : "kkemv2.Rmd",
+    "properties" : {
+        "cursorPosition" : "8,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

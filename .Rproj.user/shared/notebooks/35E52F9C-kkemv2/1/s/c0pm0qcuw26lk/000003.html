@@ -1,245 +1,35 @@
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-
-<meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
-
-
-
-
-<title>KKEMV II etapp</title>
-
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
-
-
-</head>
-
-<body>
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-</style>
-
-
-<style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-</style>
-
-<script>
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark it active
-  menuAnchor.parent().addClass('active');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
-});
-</script>
-
-
-<div class="container-fluid main-container">
-
-<!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
-
-<!-- code folding -->
-
-
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">KKEMV Statistika</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="index.html">Avaleht</a>
-</li>
-<li>
-  <a href="kkemv1.html">I etapp 2017/18</a>
-</li>
-<li>
-  <a href="kkemv2.html">II etapp 2017/18</a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
-
-<div class="fluid-row" id="header">
-
-
-
-<h1 class="title toc-ignore">KKEMV II etapp</h1>
-
-</div>
-
-
-<pre class="r"><code>tab = read.csv(&quot;https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/IIetapp.csv&quot;,
-               header = T,
-               sep = &quot;;&quot;,
-               encoding = &quot;UTF-8&quot;,
-               dec = &quot;.&quot;,
-               stringsAsFactors = F)
-
-speakers = tab[c(1:62),]
-
-alltotalavg = na.omit(as.numeric(speakers$TOTALAVG))
-
-meantotalavg = mean(na.omit(as.numeric(speakers$TOTALAVG)))
-
-hist(alltotalavg,
-     main = &quot;Keskmised spiikripunktid&quot;,
-     xlab = &quot;Punktid&quot;,
-     ylab = &quot;Sagedus&quot;,
-     xlim = c(60, 80),
-     breaks = 6)
-
-abline(v = meantotalavg,
-       col = &quot;blue&quot;,
-       lwd = 2.5)
-
-legend(73, 20,
-       c(&quot;Aritm keskmine&quot;),
-       lwd = c(2.5),
-       col = c(&quot;blue&quot;))</code></pre>
-<p><img src="kkemv2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code>library(knitr)
-
-kable(speakers,
-      caption = &quot;Väitlejad&quot;)</code></pre>
-<table>
-<caption>Väitlejad</caption>
+<table style="width:100%;">
+<colgroup>
+<col width="6%" />
+<col width="9%" />
+<col width="3%" />
+<col width="2%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="9%" />
+<col width="10%" />
+<col width="10%" />
+<col width="9%" />
+<col width="7%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">SPEAKER</th>
@@ -266,21 +56,11 @@ kable(speakers,
 <th align="left">R5J1</th>
 <th align="left">R5J2</th>
 <th align="left">R5J3</th>
-<th align="left">R1J1.1</th>
-<th align="left">R1J2.1</th>
-<th align="left">R1J3.1</th>
-<th align="left">R2J1.1</th>
-<th align="left">R2J2.1</th>
-<th align="left">R2J3.1</th>
-<th align="left">R3J1.1</th>
-<th align="left">R3J2.1</th>
-<th align="left">R3J3.1</th>
-<th align="left">R4J1.1</th>
-<th align="left">R4J2.1</th>
-<th align="left">R4J3.1</th>
-<th align="left">R5J1.1</th>
-<th align="left">R5J2.1</th>
-<th align="left">R5J3.1</th>
+<th align="left">R1J</th>
+<th align="left">R2J</th>
+<th align="left">R3J</th>
+<th align="left">R4J</th>
+<th align="left">R5J</th>
 </tr>
 </thead>
 <tbody>
@@ -309,21 +89,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Lauri</td>
-<td align="left">Maria</td>
-<td align="left">Lauri</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaur (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andres Lestal</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Ruul (135)', 'Uku-Laur', 'Lauri']</td>
+<td align="left">['Maria', 'Lauri', 'Kaur (234)']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Kaur (234)']</td>
+<td align="left">['Andres Lestal']</td>
 </tr>
 <tr class="even">
 <td align="left">Marie Maisvee</td>
@@ -350,21 +120,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Lauri</td>
-<td align="left">Maria</td>
-<td align="left">Lauri</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaur (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andres Lestal</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Ruul (135)', 'Uku-Laur', 'Lauri']</td>
+<td align="left">['Maria', 'Lauri', 'Kaur (234)']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Kaur (234)']</td>
+<td align="left">['Andres Lestal']</td>
 </tr>
 <tr class="odd">
 <td align="left">Ela Lõhmus</td>
@@ -391,21 +151,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Lauri</td>
-<td align="left">Maria</td>
-<td align="left">Lauri</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaur (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andres Lestal</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Ruul (135)', 'Uku-Laur', 'Lauri']</td>
+<td align="left">['Maria', 'Lauri', 'Kaur (234)']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Kaur (234)']</td>
+<td align="left">['Andres Lestal']</td>
 </tr>
 <tr class="even">
 <td align="left">Joosep Radusepp</td>
@@ -432,21 +182,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left">70</td>
 <td align="left">71</td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Doris Abe</td>
-<td align="left">Andreas Tulver</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left">Heiki (45)</td>
-<td align="left">Lauri</td>
+<td align="left">['Vlad (134)']</td>
+<td align="left">['Maarja', 'Doris Abe', 'Andreas Tulver']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maria', 'Heiki (45)', 'Lauri']</td>
 </tr>
 <tr class="odd">
 <td align="left">Mikkel Mäkelä</td>
@@ -473,21 +213,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left">72</td>
 <td align="left">72</td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Doris Abe</td>
-<td align="left">Andreas Tulver</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left">Heiki (45)</td>
-<td align="left">Lauri</td>
+<td align="left">['Vlad (134)']</td>
+<td align="left">['Maarja', 'Doris Abe', 'Andreas Tulver']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maria', 'Heiki (45)', 'Lauri']</td>
 </tr>
 <tr class="even">
 <td align="left">Kirke Külvik</td>
@@ -514,21 +244,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left">70</td>
 <td align="left">71</td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Doris Abe</td>
-<td align="left">Andreas Tulver</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left">Heiki (45)</td>
-<td align="left">Lauri</td>
+<td align="left">['Vlad (134)']</td>
+<td align="left">['Maarja', 'Doris Abe', 'Andreas Tulver']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maria', 'Heiki (45)', 'Lauri']</td>
 </tr>
 <tr class="odd">
 <td align="left">Markus Vaher</td>
@@ -555,21 +275,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Lauri</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Ruul (135)', 'Uku-Laur', 'Lauri']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Tiks (345)']</td>
+<td align="left">['Tiks (345)']</td>
 </tr>
 <tr class="even">
 <td align="left">Robert Sarnet</td>
@@ -596,21 +306,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Lauri</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Ruul (135)', 'Uku-Laur', 'Lauri']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Tiks (345)']</td>
+<td align="left">['Tiks (345)']</td>
 </tr>
 <tr class="odd">
 <td align="left">Jan Seilenthal</td>
@@ -637,21 +337,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Lauri</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Ruul (135)', 'Uku-Laur', 'Lauri']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Tiks (345)']</td>
+<td align="left">['Tiks (345)']</td>
 </tr>
 <tr class="even">
 <td align="left">Mari-Liis Lillebach</td>
@@ -678,21 +368,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Uku-Laur</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Uku-Laur']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Rauno Kivimägi']</td>
 </tr>
 <tr class="odd">
 <td align="left">Christina Kiik</td>
@@ -719,21 +399,11 @@ kable(speakers,
 <td align="left">73</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Uku-Laur</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Uku-Laur']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Rauno Kivimägi']</td>
 </tr>
 <tr class="even">
 <td align="left">Hans Kristjan Veri</td>
@@ -760,21 +430,11 @@ kable(speakers,
 <td align="left">69</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Uku-Laur</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">['Uku-Laur']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Rauno Kivimägi']</td>
 </tr>
 <tr class="odd">
 <td align="left">Anniki Mikelsaar</td>
@@ -801,21 +461,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Kätliin (123)']</td>
+<td align="left">['Kätliin (123)', 'Küüsmaa', 'Tuule (234)']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Ruul (135)', 'Küüsmaa', 'Uku-Laur']</td>
+<td align="left">['Vlad (134)']</td>
 </tr>
 <tr class="even">
 <td align="left">Johanna Issak</td>
@@ -842,21 +492,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Kätliin (123)']</td>
+<td align="left">['Kätliin (123)', 'Küüsmaa', 'Tuule (234)']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Ruul (135)', 'Küüsmaa', 'Uku-Laur']</td>
+<td align="left">['Vlad (134)']</td>
 </tr>
 <tr class="odd">
 <td align="left">Brett-Peter Rästas</td>
@@ -883,21 +523,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="even">
 <td align="left">Hendry Ollin</td>
@@ -924,21 +554,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kristin (24)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maria']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Kristin (24)']</td>
+<td align="left">['Maarja']</td>
+<td align="left">['Maarja']</td>
 </tr>
 <tr class="odd">
 <td align="left">Mia Maripuu</td>
@@ -965,21 +585,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kristin (24)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maria']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Kristin (24)']</td>
+<td align="left">['Maarja']</td>
+<td align="left">['Maarja']</td>
 </tr>
 <tr class="even">
 <td align="left">Uko Rasmus Tildemann</td>
@@ -1006,21 +616,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kristin (24)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maria']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Kristin (24)']</td>
+<td align="left">['Maarja']</td>
+<td align="left">['Maarja']</td>
 </tr>
 <tr class="odd">
 <td align="left">Juudit Lindsalu</td>
@@ -1047,21 +647,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Maarja</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Richard</td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Vlad (134)']</td>
+<td align="left">['Kätliin (123)', 'Küüsmaa', 'Tuule (234)']</td>
+<td align="left">['Maarja', 'Kaur (234)', 'Richard']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Vlad (134)']</td>
 </tr>
 <tr class="even">
 <td align="left">Mihkel Mariusz Jezierski</td>
@@ -1088,21 +678,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Maarja</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Richard</td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Vlad (134)']</td>
+<td align="left">['Kätliin (123)', 'Küüsmaa', 'Tuule (234)']</td>
+<td align="left">['Maarja', 'Kaur (234)', 'Richard']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Vlad (134)']</td>
 </tr>
 <tr class="odd">
 <td align="left">Kätriin Pullerits</td>
@@ -1129,21 +709,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Maarja</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Richard</td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Vlad (134)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Vlad (134)']</td>
+<td align="left">['Kätliin (123)', 'Küüsmaa', 'Tuule (234)']</td>
+<td align="left">['Maarja', 'Kaur (234)', 'Richard']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Vlad (134)']</td>
 </tr>
 <tr class="even">
 <td align="left">Õnnely Roos</td>
@@ -1170,21 +740,11 @@ kable(speakers,
 <td align="left">69</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Andres Lestal</td>
-<td align="left">Richard</td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kristin (24)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Heiki (45)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andreas Tulver</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Küüsmaa', 'Andres Lestal', 'Richard']</td>
+<td align="left">['Ruul (135)']</td>
+<td align="left">['Kristin (24)']</td>
+<td align="left">['Heiki (45)']</td>
+<td align="left">['Andreas Tulver']</td>
 </tr>
 <tr class="odd">
 <td align="left">Arianna Sofia Jater</td>
@@ -1211,21 +771,11 @@ kable(speakers,
 <td align="left">69</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Andres Lestal</td>
-<td align="left">Richard</td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kristin (24)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Heiki (45)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andreas Tulver</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Küüsmaa', 'Andres Lestal', 'Richard']</td>
+<td align="left">['Ruul (135)']</td>
+<td align="left">['Kristin (24)']</td>
+<td align="left">['Heiki (45)']</td>
+<td align="left">['Andreas Tulver']</td>
 </tr>
 <tr class="even">
 <td align="left">Kristiina Krause</td>
@@ -1252,21 +802,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Andres Lestal</td>
-<td align="left">Richard</td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kristin (24)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Heiki (45)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andreas Tulver</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Küüsmaa', 'Andres Lestal', 'Richard']</td>
+<td align="left">['Ruul (135)']</td>
+<td align="left">['Kristin (24)']</td>
+<td align="left">['Heiki (45)']</td>
+<td align="left">['Andreas Tulver']</td>
 </tr>
 <tr class="odd">
 <td align="left">Oskar Samuel Rebane</td>
@@ -1293,21 +833,11 @@ kable(speakers,
 <td align="left">74</td>
 <td align="left">73</td>
 <td align="left">75</td>
-<td align="left">Kätliin (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left">Lauri</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left">Erik</td>
-<td align="left">Richard</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Maria</td>
-<td align="left">Heiki (45)</td>
-<td align="left">Lauri</td>
+<td align="left">['Kätliin (123)']</td>
+<td align="left">['Maria', 'Lauri', 'Kaur (234)']</td>
+<td align="left">['Kätliin (123)', 'Uku-Laur', 'Vlad (134)']</td>
+<td align="left">['Erik', 'Richard', 'Tuule (234)']</td>
+<td align="left">['Maria', 'Heiki (45)', 'Lauri']</td>
 </tr>
 <tr class="even">
 <td align="left">Saskia Bergmann</td>
@@ -1334,21 +864,11 @@ kable(speakers,
 <td align="left">74</td>
 <td align="left">73</td>
 <td align="left">75</td>
-<td align="left">Kätliin (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left">Lauri</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left">Erik</td>
-<td align="left">Richard</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Maria</td>
-<td align="left">Heiki (45)</td>
-<td align="left">Lauri</td>
+<td align="left">['Kätliin (123)']</td>
+<td align="left">['Maria', 'Lauri', 'Kaur (234)']</td>
+<td align="left">['Kätliin (123)', 'Uku-Laur', 'Vlad (134)']</td>
+<td align="left">['Erik', 'Richard', 'Tuule (234)']</td>
+<td align="left">['Maria', 'Heiki (45)', 'Lauri']</td>
 </tr>
 <tr class="odd">
 <td align="left">Triinu Jõgi</td>
@@ -1375,21 +895,11 @@ kable(speakers,
 <td align="left">74</td>
 <td align="left">74</td>
 <td align="left">74</td>
-<td align="left">Kätliin (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left">Lauri</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left">Erik</td>
-<td align="left">Richard</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Maria</td>
-<td align="left">Heiki (45)</td>
-<td align="left">Lauri</td>
+<td align="left">['Kätliin (123)']</td>
+<td align="left">['Maria', 'Lauri', 'Kaur (234)']</td>
+<td align="left">['Kätliin (123)', 'Uku-Laur', 'Vlad (134)']</td>
+<td align="left">['Erik', 'Richard', 'Tuule (234)']</td>
+<td align="left">['Maria', 'Heiki (45)', 'Lauri']</td>
 </tr>
 <tr class="even">
 <td align="left">Marta Margareeta Bender</td>
@@ -1416,21 +926,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="odd">
 <td align="left">Triinu Lota Lepp</td>
@@ -1457,21 +957,11 @@ kable(speakers,
 <td align="left">69</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Doris Abe</td>
-<td align="left">Andreas Tulver</td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Lauri</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maarja']</td>
+<td align="left">['Maarja', 'Doris Abe', 'Andreas Tulver']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Lauri']</td>
+<td align="left">['Ruul (135)']</td>
 </tr>
 <tr class="even">
 <td align="left">Kaur Hannes Käämbre</td>
@@ -1498,21 +988,11 @@ kable(speakers,
 <td align="left">67</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Doris Abe</td>
-<td align="left">Andreas Tulver</td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Lauri</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maarja']</td>
+<td align="left">['Maarja', 'Doris Abe', 'Andreas Tulver']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Lauri']</td>
+<td align="left">['Ruul (135)']</td>
 </tr>
 <tr class="odd">
 <td align="left">Lotta Vaher</td>
@@ -1539,21 +1019,11 @@ kable(speakers,
 <td align="left">68</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Doris Abe</td>
-<td align="left">Andreas Tulver</td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Lauri</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maarja']</td>
+<td align="left">['Maarja', 'Doris Abe', 'Andreas Tulver']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Lauri']</td>
+<td align="left">['Ruul (135)']</td>
 </tr>
 <tr class="even">
 <td align="left">Kirke Antsmäe</td>
@@ -1580,21 +1050,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="odd">
 <td align="left">Kadri Muuga</td>
@@ -1621,21 +1081,11 @@ kable(speakers,
 <td align="left">67</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tuule (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaur (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Tuule (234)']</td>
+<td align="left">['Kaur (234)']</td>
+<td align="left">['Rauno Kivimägi']</td>
 </tr>
 <tr class="even">
 <td align="left">Aleksander Vunk</td>
@@ -1662,21 +1112,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left">71</td>
 <td align="left">74</td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Uku-Laur</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Lauri</td>
-<td align="left">Tiks (345)</td>
-<td align="left">Erik</td>
-<td align="left">Richard</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Erik</td>
-<td align="left">Doris Abe</td>
+<td align="left">['Maria']</td>
+<td align="left">['Uku-Laur']</td>
+<td align="left">['Küüsmaa', 'Lauri', 'Tiks (345)']</td>
+<td align="left">['Erik', 'Richard', 'Tuule (234)']</td>
+<td align="left">['Küüsmaa', 'Erik', 'Doris Abe']</td>
 </tr>
 <tr class="odd">
 <td align="left">Tom Siuste</td>
@@ -1703,21 +1143,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left">72</td>
 <td align="left">74</td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Uku-Laur</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Lauri</td>
-<td align="left">Tiks (345)</td>
-<td align="left">Erik</td>
-<td align="left">Richard</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Erik</td>
-<td align="left">Doris Abe</td>
+<td align="left">['Maria']</td>
+<td align="left">['Uku-Laur']</td>
+<td align="left">['Küüsmaa', 'Lauri', 'Tiks (345)']</td>
+<td align="left">['Erik', 'Richard', 'Tuule (234)']</td>
+<td align="left">['Küüsmaa', 'Erik', 'Doris Abe']</td>
 </tr>
 <tr class="even">
 <td align="left">Karl-Endrik Kriis</td>
@@ -1744,21 +1174,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left">71</td>
 <td align="left">73</td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Uku-Laur</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Lauri</td>
-<td align="left">Tiks (345)</td>
-<td align="left">Erik</td>
-<td align="left">Richard</td>
-<td align="left">Tuule (234)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Erik</td>
-<td align="left">Doris Abe</td>
+<td align="left">['Maria']</td>
+<td align="left">['Uku-Laur']</td>
+<td align="left">['Küüsmaa', 'Lauri', 'Tiks (345)']</td>
+<td align="left">['Erik', 'Richard', 'Tuule (234)']</td>
+<td align="left">['Küüsmaa', 'Erik', 'Doris Abe']</td>
 </tr>
 <tr class="odd">
 <td align="left">Gertin Kender</td>
@@ -1785,21 +1205,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="even">
 <td align="left">Karl Oskar Pungas</td>
@@ -1826,21 +1236,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="odd">
 <td align="left">Mattias Allpere</td>
@@ -1867,21 +1267,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="even">
 <td align="left">Norman de Vries</td>
@@ -1908,21 +1298,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Richard</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Maarja', 'Kaur (234)', 'Richard']</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="odd">
 <td align="left">Eva Lotta Mett</td>
@@ -1949,21 +1329,11 @@ kable(speakers,
 <td align="left">69</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Richard</td>
-<td align="left">Heiki (45)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Maarja', 'Kaur (234)', 'Richard']</td>
+<td align="left">['Heiki (45)']</td>
+<td align="left">['Ruul (135)']</td>
 </tr>
 <tr class="even">
 <td align="left">Anette Andersoo</td>
@@ -1990,21 +1360,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left">Kaur (234)</td>
-<td align="left">Richard</td>
-<td align="left">Heiki (45)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Erik']</td>
+<td align="left">['Maarja', 'Kaur (234)', 'Richard']</td>
+<td align="left">['Heiki (45)']</td>
+<td align="left">['Ruul (135)']</td>
 </tr>
 <tr class="odd">
 <td align="left">James Paul Arney</td>
@@ -2031,21 +1391,11 @@ kable(speakers,
 <td align="left">74</td>
 <td align="left">73</td>
 <td align="left">71</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left">Ruul (135)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Erik</td>
-<td align="left">Doris Abe</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Ruul (135)']</td>
+<td align="left">['Kätliin (123)', 'Uku-Laur', 'Vlad (134)']</td>
+<td align="left">['Ruul (135)', 'Küüsmaa', 'Uku-Laur']</td>
+<td align="left">['Küüsmaa', 'Erik', 'Doris Abe']</td>
 </tr>
 <tr class="even">
 <td align="left">Karoliine Pärlin</td>
@@ -2072,21 +1422,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left">72</td>
 <td align="left">72</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left">Ruul (135)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Erik</td>
-<td align="left">Doris Abe</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Ruul (135)']</td>
+<td align="left">['Kätliin (123)', 'Uku-Laur', 'Vlad (134)']</td>
+<td align="left">['Ruul (135)', 'Küüsmaa', 'Uku-Laur']</td>
+<td align="left">['Küüsmaa', 'Erik', 'Doris Abe']</td>
 </tr>
 <tr class="odd">
 <td align="left">Markus Laanoja</td>
@@ -2113,21 +1453,11 @@ kable(speakers,
 <td align="left">73</td>
 <td align="left">73</td>
 <td align="left">73</td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Ruul (135)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kätliin (123)</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Vlad (134)</td>
-<td align="left">Ruul (135)</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Uku-Laur</td>
-<td align="left">Küüsmaa</td>
-<td align="left">Erik</td>
-<td align="left">Doris Abe</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Ruul (135)']</td>
+<td align="left">['Kätliin (123)', 'Uku-Laur', 'Vlad (134)']</td>
+<td align="left">['Ruul (135)', 'Küüsmaa', 'Uku-Laur']</td>
+<td align="left">['Küüsmaa', 'Erik', 'Doris Abe']</td>
 </tr>
 <tr class="even">
 <td align="left">Marie Valdes</td>
@@ -2154,21 +1484,11 @@ kable(speakers,
 <td align="left">73</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Andres Lestal</td>
-<td align="left">Richard</td>
-<td align="left">Richard</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andres Lestal</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Küüsmaa', 'Andres Lestal', 'Richard']</td>
+<td align="left">['Richard']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Maarja']</td>
+<td align="left">['Andres Lestal']</td>
 </tr>
 <tr class="odd">
 <td align="left">Johanna Järvekülg</td>
@@ -2195,21 +1515,11 @@ kable(speakers,
 <td align="left">72</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Andres Lestal</td>
-<td align="left">Richard</td>
-<td align="left">Richard</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andres Lestal</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Küüsmaa', 'Andres Lestal', 'Richard']</td>
+<td align="left">['Richard']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Maarja']</td>
+<td align="left">['Andres Lestal']</td>
 </tr>
 <tr class="even">
 <td align="left">Susanna Mett</td>
@@ -2236,21 +1546,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Andres Lestal</td>
-<td align="left">Richard</td>
-<td align="left">Richard</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andres Lestal</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Küüsmaa', 'Andres Lestal', 'Richard']</td>
+<td align="left">['Richard']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Maarja']</td>
+<td align="left">['Andres Lestal']</td>
 </tr>
 <tr class="odd">
 <td align="left">Carmen Šimanis</td>
@@ -2277,21 +1577,11 @@ kable(speakers,
 <td align="left">68</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tuule (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaur (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maarja']</td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Tuule (234)']</td>
+<td align="left">['Kaur (234)']</td>
+<td align="left">['Rauno Kivimägi']</td>
 </tr>
 <tr class="even">
 <td align="left">Eliisa Täht</td>
@@ -2318,21 +1608,11 @@ kable(speakers,
 <td align="left">69</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Richard</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tuule (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Erik']</td>
+<td align="left">['Richard']</td>
+<td align="left">['Tuule (234)']</td>
+<td align="left">['Tiks (345)']</td>
+<td align="left">['Tiks (345)']</td>
 </tr>
 <tr class="odd">
 <td align="left">Ketli Rihkrand</td>
@@ -2359,21 +1639,11 @@ kable(speakers,
 <td align="left">67</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Richard</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tuule (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Erik']</td>
+<td align="left">['Richard']</td>
+<td align="left">['Tuule (234)']</td>
+<td align="left">['Tiks (345)']</td>
+<td align="left">['Tiks (345)']</td>
 </tr>
 <tr class="even">
 <td align="left">Kirsika Rahu</td>
@@ -2400,21 +1670,11 @@ kable(speakers,
 <td align="left">66</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Richard</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tuule (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tiks (345)</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Erik']</td>
+<td align="left">['Richard']</td>
+<td align="left">['Tuule (234)']</td>
+<td align="left">['Tiks (345)']</td>
+<td align="left">['Tiks (345)']</td>
 </tr>
 <tr class="odd">
 <td align="left">Richard Mõisaäär</td>
@@ -2441,21 +1701,11 @@ kable(speakers,
 <td align="left">71</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Lauri</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andreas Tulver</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Lauri']</td>
+<td align="left">['Andreas Tulver']</td>
 </tr>
 <tr class="even">
 <td align="left">Gerly Ots</td>
@@ -2482,21 +1732,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Lauri</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andreas Tulver</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Lauri']</td>
+<td align="left">['Andreas Tulver']</td>
 </tr>
 <tr class="odd">
 <td align="left">Rauno Rauniste</td>
@@ -2523,21 +1763,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaspar (123)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maria</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Lauri</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Andreas Tulver</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Kaspar (123)']</td>
+<td align="left">['Maria']</td>
+<td align="left">['Lauri']</td>
+<td align="left">['Andreas Tulver']</td>
 </tr>
 <tr class="even">
 <td align="left">Luisa Jõpiselg</td>
@@ -2564,21 +1794,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Lauri</td>
-<td align="left">Tiks (345)</td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Erik']</td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Küüsmaa', 'Lauri', 'Tiks (345)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maarja']</td>
 </tr>
 <tr class="odd">
 <td align="left">Greete Kera</td>
@@ -2605,21 +1825,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Lauri</td>
-<td align="left">Tiks (345)</td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Erik']</td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Küüsmaa', 'Lauri', 'Tiks (345)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maarja']</td>
 </tr>
 <tr class="even">
 <td align="left">Maria Jõpiselg</td>
@@ -2646,21 +1856,11 @@ kable(speakers,
 <td align="left">70</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Erik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Küüsmaa</td>
-<td align="left">Lauri</td>
-<td align="left">Tiks (345)</td>
-<td align="left">Doris Abe</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Erik']</td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Küüsmaa', 'Lauri', 'Tiks (345)']</td>
+<td align="left">['Doris Abe']</td>
+<td align="left">['Maarja']</td>
 </tr>
 <tr class="odd">
 <td align="left">Dummy 1</td>
@@ -2687,21 +1887,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="even">
 <td align="left">Dummy 2</td>
@@ -2728,21 +1918,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="odd">
 <td align="left">Dummy 3</td>
@@ -2769,21 +1949,11 @@ kable(speakers,
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
+<td align="left">[]</td>
 </tr>
 <tr class="even">
 <td align="left">Karl Saamuel Hollman</td>
@@ -2810,52 +1980,11 @@ kable(speakers,
 <td align="left">69</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">Maarja</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Tuule (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Kaur (234)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Rauno Kivimägi</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">['Maarja']</td>
+<td align="left">['Rauno Kivimägi']</td>
+<td align="left">['Tuule (234)']</td>
+<td align="left">['Kaur (234)']</td>
+<td align="left">['Rauno Kivimägi']</td>
 </tr>
 </tbody>
 </table>
-
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>

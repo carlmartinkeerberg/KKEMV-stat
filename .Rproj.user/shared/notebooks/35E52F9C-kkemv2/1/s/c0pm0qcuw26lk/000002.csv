@@ -1,0 +1,3 @@
+"0","library(knitr)"
+"0","kable(speakers,"
+"0","      caption = ""Väitlejad"")"
