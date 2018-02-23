@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "715297832",
+    "hash" : "3430980793",
     "id" : "4739779",
-    "lastKnownWriteTime" : 1519392149,
-    "last_content_update" : 1519393995456,
+    "lastKnownWriteTime" : 1519397598,
+    "last_content_update" : 1519397598212,
     "path" : "~/GitHub/KKEMV-stat/kkemv2.Rmd",
     "project_path" : "kkemv2.Rmd",
     "properties" : {
-        "cursorPosition" : "8,0",
-        "scrollLine" : "0"
+        "cursorPosition" : "43,17",
+        "scrollLine" : "24"
     },
     "relative_order" : 1,
     "source_on_save" : false,

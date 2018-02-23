@@ -37,9 +37,10 @@ legend(73, 20,
 ```
 
 ```{r}
-library(knitr)
+totalspeakers = na.omit(data.frame(speakers$SPEAKER, as.numeric(speakers$TOTALAVG)))
 
-kable(speakers,
-      caption = "Väitlejad")
+bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG.),]
+
+print(bestspeaker)
 ```
 
