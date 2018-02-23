@@ -1,6 +1,8 @@
 ---
 title: "KKEMV statistiline analüüs"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 #KKEMV statistiline analüüs
