@@ -22,9 +22,9 @@ Uko Rasmus Tiidemann;HMU;Viljandi;70.6;71.0;71.0;70.0;69.0;72.0;71;;;71;;;70;;;6
 Juudit Lindsalu;HTG 2;KG;72.0;73.0;74.0;74.0;66.0;73.0;73;;;74;;;74;;;66;;;73;;;Rynaldo;;;Karl Martin Jaup;;;Tõnis Kuusk;;;Karin Kase;;;Erik Haamer;;
 Kätriin Pullerits;HTG 2;KG;71.6;74.0;72.0;73.0;67.0;72.0;74;;;72;;;73;;;67;;;72;;;Rynaldo;;;Karl Martin Jaup;;;Tõnis Kuusk;;;Karin Kase;;;Erik Haamer;;
 Mihkel Mariusz Jezierski;HTG 2;KG;72.6;75.0;73.0;77.0;67.0;71.0;75;;;73;;;77;;;67;;;71;;;Rynaldo;;;Karl Martin Jaup;;;Tõnis Kuusk;;;Karin Kase;;;Erik Haamer;;
-Jan Tälli;JWG;Teeninduskool;;67.0;;;70.0;66.0;67;;;;;;;;;70;;;66;;;Maarja Tambet;;;;;;;;;Erik Haamer;;;Anneliis Rea;;
-Mihkel Teinemaa;JWG;Teeninduskool;;;68.0;66.0;71.0;67.0;;;;68;;;66;;;71;;;67;;;;;;Herman Kelomees;;;Karin Kase;;;Erik Haamer;;;Anneliis Rea;;
-Ruth Kübard;JWG;Teeninduskool;;68.0;66.0;62.0;;;68;;;66;;;62;;;;;;;;;Maarja Tambet;;;Herman Kelomees;;;Karin Kase;;;;;;;;
+Jan Tälli;JWG;Teeninduskool;67.67;67.0;;;70.0;66.0;67;;;;;;;;;70;;;66;;;Maarja Tambet;;;;;;;;;Erik Haamer;;;Anneliis Rea;;
+Mihkel Teinemaa;JWG;Teeninduskool;68.0;;68.0;66.0;71.0;67.0;;;;68;;;66;;;71;;;67;;;;;;Herman Kelomees;;;Karin Kase;;;Erik Haamer;;;Anneliis Rea;;
+Ruth Kübard;JWG;Teeninduskool;65.33;68.0;66.0;62.0;;;68;;;66;;;62;;;;;;;;;Maarja Tambet;;;Herman Kelomees;;;Karin Kase;;;;;;;;
 Victoria Kübard;JWG;Teeninduskool;67.4;68.0;66.0;65.0;70.0;68.0;68;;;66;;;65;;;70;;;68;;;Maarja Tambet;;;Herman Kelomees;;;Karin Kase;;;Erik Haamer;;;Anneliis Rea;;
 Oskar Samuel Rebane;Kaosus;TIK x2/Reaal;75.4;75.0;76.0;76.0;74.0;76.0;75;;;76;;;76;;;74;;;76;;;Maarja Pild;;;Carl-Martin Keerberg;;;Tõnis Kuusk;;;Maarja Pild;;;Carl-Martin Keerberg;;
 Triinu Jõgi;Kaosus;TIK x2/Reaal;73.8;72.0;75.0;75.0;72.0;75.0;72;;;75;;;75;;;72;;;75;;;Maarja Pild;;;Carl-Martin Keerberg;;;Tõnis Kuusk;;;Maarja Pild;;;Carl-Martin Keerberg;;
@@ -55,8 +55,8 @@ Markus Laanoja;May Contain Nuts;;74.4;71.0;73.0;76.0;77.0;75.0;71;;;73;;;76;;;77
 James Paul Arney;May Contain Nuts;;74.4;73.0;72.0;74.0;77.0;76.0;73;;;72;;;74;;;77;;;76;;;Tõnis Kuusk;;;Siim Ruul;;;Erik Haamer;;;Karin Kase;;;Lauri Leas;;
 Karoliine Pärlin;May Contain Nuts;;72.0;70.0;72.0;72.0;70.0;76.0;70;;;72;;;72;;;70;;;76;;;Tõnis Kuusk;;;Siim Ruul;;;Erik Haamer;;;Karin Kase;;;Lauri Leas;;
 Johanna Järvekülg;Me ei lähe turniirile, sest meil pole nime;;70.8;69.0;71.0;71.0;71.0;72.0;69;;;71;;;71;;;71;;;72;;;Karl Martin Jaup;;;Martin Küüsmaa;;;Anneliis Rea;;;Anneliis Rea;;;Maarja Tambet;;
-Susanna Mett;Me ei lähe turniirile, sest meil pole nime;;;71.0;74.0;75.0;73.0;;71;;;74;;;75;;;73;;;;;;Karl Martin Jaup;;;Martin Küüsmaa;;;Anneliis Rea;;;Anneliis Rea;;;;;
-Kelli Järvoja;Midagi Geniaalset;;;67.0;;68.0;;;67;;;;;;68;;;;;;;;;Karl Martin Jaup;;;;;;Kristin Parts;;;;;;;;
+Susanna Mett;Me ei lähe turniirile, sest meil pole nime;;73.25;71.0;74.0;75.0;73.0;;71;;;74;;;75;;;73;;;;;;Karl Martin Jaup;;;Martin Küüsmaa;;;Anneliis Rea;;;Anneliis Rea;;;;;
+Kelli Järvoja;Midagi Geniaalset;;67.5;67.0;;68.0;;;67;;;;;;68;;;;;;;;;Karl Martin Jaup;;;;;;Kristin Parts;;;;;;;;
 Tuuli Tamm;Midagi Geniaalset;;67.6;67.0;65.0;68.0;69.0;69.0;67;;;65;;;68;;;69;;;69;;;Karl Martin Jaup;;;Herman Kelomees;;;Kristin Parts;;;Maarja Tambet;;;Helery Maidlas;;
 Robin Liiber;Nova Mulk;;68.6;67.0;68.0;74.0;64.0;70.0;67;;;68;;;74;;;64;;;70;;;Anneliis Rea;;;Triin Toimetaja;;;Helery Maidlas;;;Herman Kelomees;;;Martin Küüsmaa;;
 Hanna Kerstina Kartau;Nova Mulk;;70.0;69.0;69.0;74.0;68.0;70.0;69;;;69;;;74;;;68;;;70;;;Anneliis Rea;;;Triin Toimetaja;;;Helery Maidlas;;;Herman Kelomees;;;Martin Küüsmaa;;
@@ -80,18 +80,18 @@ Oskar Lepmets;Viimane minut;;65.6;66.0;63.0;66.0;67.0;66.0;66;;;63;;;66;;;67;;;6
 Kristofer Sults;Viimane minut;;68.2;69.0;65.0;68.0;68.0;71.0;69;;;65;;;68;;;68;;;71;;;Martin Küüsmaa;;;Tõnis Kuusk;;;Kristin Parts;;;Helery Maidlas;;;Triin Toimetaja;;
 Carol Väljaots;Tallinna Teeninduskool;;66.8;68.0;66.0;62.0;70.0;68.0;68;;;66;;;62;;;70;;;68;;;Carl-Martin Keerberg;;;Anneliis Rea;;;Karl Martin Jaup;;;Maarja Tambet;;;Maria Kull;;
 Kaur Järve;No Team;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-Jasper Jürisson;Tallinna Teeninduskool;;;62.0;65.0;61.0;;67.0;62;;;65;;;61;;;;;;67;;;Carl-Martin Keerberg;;;Anneliis Rea;;;Karl Martin Jaup;;;;;;Maria Kull;;
+Jasper Jürisson;Tallinna Teeninduskool;;63.75;62.0;65.0;61.0;;67.0;62;;;65;;;61;;;;;;67;;;Carl-Martin Keerberg;;;Anneliis Rea;;;Karl Martin Jaup;;;;;;Maria Kull;;
 Helen Kotter;Tallinna Teeninduskool;;66.2;68.0;66.0;61.0;67.0;69.0;68;;;66;;;61;;;67;;;69;;;Carl-Martin Keerberg;;;Anneliis Rea;;;Karl Martin Jaup;;;Maarja Tambet;;;Maria Kull;;
-Aleks Graumann;VGS;;;;62.0;61.0;64.0;66.0;;;;62;;;61;;;64;;;66;;;;;;Helery Maidlas;;;Karl Martin Jaup;;;Lauri Leas;;;Tõnis Kuusk;;
+Aleks Graumann;VGS;;63.25;;62.0;61.0;64.0;66.0;;;;62;;;61;;;64;;;66;;;;;;Helery Maidlas;;;Karl Martin Jaup;;;Lauri Leas;;;Tõnis Kuusk;;
 Astride Linder;Midagi Geniaalset;;67.8;68.0;66.0;67.0;68.0;70.0;68;;;66;;;67;;;68;;;70;;;Karl Martin Jaup;;;Herman Kelomees;;;Kristin Parts;;;Maarja Tambet;;;Helery Maidlas;;
-Triini Vaher;Midagi Geniaalset;;;;66.0;;70.0;72.0;;;;66;;;;;;70;;;72;;;;;;Herman Kelomees;;;;;;Maarja Tambet;;;Helery Maidlas;;
+Triini Vaher;Midagi Geniaalset;;69.33;;66.0;;70.0;72.0;;;;66;;;;;;70;;;72;;;;;;Herman Kelomees;;;;;;Maarja Tambet;;;Helery Maidlas;;
 Marie Valdes;Me ei lähe turniirile, sest meil pole nime;;70.4;70.0;70.0;70.0;72.0;70.0;70;;;70;;;70;;;72;;;70;;;Karl Martin Jaup;;;Martin Küüsmaa;;;Anneliis Rea;;;Anneliis Rea;;;Maarja Tambet;;
 Markus Vaher;Deb8tractive;;73.2;75.0;71.0;73.0;74.0;73.0;75;;;71;;;73;;;74;;;73;;;Maria Kull;;;Siim Ruul;;;Martin Küüsmaa;;;Erik Haamer;;;Carl-Martin Keerberg;;
 Jan Seilenthal;Deb8tractive;;73.0;73.0;71.0;73.0;74.0;74.0;73;;;71;;;73;;;74;;;74;;;Maria Kull;;;Siim Ruul;;;Martin Küüsmaa;;;Erik Haamer;;;Carl-Martin Keerberg;;
 Robert Sarnet;Deb8tractive;;73.2;74.0;72.0;73.0;73.0;74.0;74;;;72;;;73;;;73;;;74;;;Maria Kull;;;Siim Ruul;;;Martin Küüsmaa;;;Erik Haamer;;;Carl-Martin Keerberg;;
 Liisa Raavel;LG;;68.6;66.0;68.0;69.0;69.0;71.0;66;;;68;;;69;;;69;;;71;;;Tõnis Kuusk;;;Anneliis Rea;;;Maarja Tambet;;;Triin Toimetaja;;;Helery Maidlas;;
 Sofia Simone Lammas;Katoliku 2;;71.0;73.0;72.0;72.0;70.0;68.0;73;;;72;;;72;;;70;;;68;;;Lauri Leas;;;Karl Martin Jaup;;;Martin Küüsmaa;;;Maria Kull;;;Karl Martin Jaup;;
-Laury Margus Lind;Tallinna Teeninduskool;;;;;;68.0;;;;;;;;;;;68;;;;;;;;;;;;;;;Maarja Tambet;;;;;
+Laury Margus Lind;Tallinna Teeninduskool;;68.0;;;;68.0;;;;;;;;;;;68;;;;;;;;;;;;;;;Maarja Tambet;;;;;
 TEAM;TOTAL;R1;R2;R3;R4;R4;R1J1;R1J2;R1J3;R2J1;R2J2;R2J3;R3J1;R3J2;R3J3;R4J1;R4J2;R4J3;R5J1;R5J2;R5J3;R1VS;R2VS;R3VS;R4VS;R5VS
 2 and a half girls;3;1;0;1;1;0;3;;;0;;;3;;;3;;;0;;;Viimane minut;Buds;LG;Põlvakad;Follow @ bossekass
 AnCaRa;0;0;0;0;0;0;0;;;0;;;0;;;0;;;0;;;Kõrboja peremeeskond;Anglikaani jazõki vabariik;Nova Mulk;Söörömöö;Tallinna Teeninduskool
