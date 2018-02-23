@@ -1,6 +1,6 @@
-﻿name: "KKEMV Statistiline Analüüs"
+﻿name: "KKEMV Statistika"
 navbar:
-  title: "KKEMV Statistiline Analüüs"
+  title: "KKEMV Statistika"
   left:
     - text: "Avaleht"
       href: index.html
