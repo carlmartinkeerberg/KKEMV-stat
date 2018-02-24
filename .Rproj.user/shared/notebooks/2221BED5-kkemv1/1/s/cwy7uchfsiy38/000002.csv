@@ -1,3 +1,0 @@
-"0","teams = data.frame(tab[c(96:125), c(1:27)])
-teams_header = c(tab[c(64), c(1:27)])
-names(teams) = teams_header"
