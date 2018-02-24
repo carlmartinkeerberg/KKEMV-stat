@@ -1,4 +1,4 @@
-SPEAKER;TEAM;SCHOOL;TOTALAVG;R1AVG;R2AVG;R3AVG;R4AVG;R5AVG;R1J1;R1J2;R1J3;R2J1;R2J2;R2J3;R3J1;R3J2;R3J3;R4J1;R4J2;R4J3;R5J1;R5J2;R5J3;R1J1;R1J2;R1J3;R2J1;R2J2;R2J3;R3J1;R3J2;R3J3;R4J1;R4J2;R4J3;R5J1;R5J2;R5J3
+SPEAKER;TEAM;SCHOOL;TOTALAVG;R1AVG;R2AVG;R3AVG;R4AVG;R5AVG;R1J1;R1J2;R1J3;R2J1;R2J2;R2J3;R3J1;R3J2;R3J3;R4J1;R4J2;R4J3;R5J1;R5J2;R5J3;R1J1NAME;R1J2NAME;R1J3NAME;R2J1NAME;R2J2NAME;R2J3NAME;R3J1NAME;R3J2NAME;R3J3NAME;R4J1NAME;R4J2NAME;R4J3NAME;R5J1NAME;R5J2NAME;R5J3NAME
 Dagnar Engel;2 and a half girls;Pärnu Kuninga tn;65.8;67.0;65.0;69.0;63.0;65.0;67;;;65;;;69;;;63;;;65;;;Martin Küüsmaa;;;Lauri Leas;;;Maarja Tambet;;;Tõnis Kuusk;;;Herman Kelomees;;
 Ya Yuan Min;2 and a half girls;Pärnu Kuninga tn;66.0;68.0;66.0;68.0;64.0;64.0;68;;;66;;;68;;;64;;;64;;;Martin Küüsmaa;;;Lauri Leas;;;Maarja Tambet;;;Tõnis Kuusk;;;Herman Kelomees;;
 Kärt Annus;2 and a half girls;Pärnu Kuninga tn;67.4;68.0;67.0;69.0;68.0;65.0;68;;;67;;;69;;;68;;;65;;;Martin Küüsmaa;;;Lauri Leas;;;Maarja Tambet;;;Tõnis Kuusk;;;Herman Kelomees;;
@@ -123,21 +123,21 @@ VGS;1;0;0;1;0;0;0;;;0;;;3;;;0;;;0;;;Katoliku 1;Põlvakad;Tallinna Teeninduskool;
 Viimane minut;2;0;0;1;1;0;0;;;0;;;3;;;3;;;0;;;2 and a half girls;Tallinna 21. kool;Midagi Geniaalset;Anglikaani jazõki vabariik;Kolmainsus
 Tallinna Teeninduskool;1;0;0;0;0;1;0;;;0;;;0;;;0;;;3;;;kestaMesta;LG;VGS;Midagi Geniaalset;AnCaRa
 Deb8tractive;2;1;0;0;1;0;3;;;0;;;0;;;3;;;0;;;Söörömöö;May Contain Nuts;Katoliku 2;JWG;Kaosus
-JUDGE;R1P;R1O;R2P;R20;R3P;R3O;R4P;R4O;R5P;R5O
-Herman Kelomees;Anglikaani jazõki vabariik;Big Boys;JWG;Midagi Geniaalset;Tallinna 21. kool;Põlvakad;Nova Mulk;Kõrboja peremeeskond;2 and a half girls;Follow @ bossekass
-Triin Toimetaja;Taskupuru dünamo;Tallinna 21. kool;Nova Mulk;Marie Under the table;Big Boys;Kõrboja peremeeskond;KMP;LG;Viimane minut;Kolmainsus
-Anneliis Rea;HMU;Nova Mulk;Tallinna Teeninduskool;LG;Me ei lähe turniirile, sest meil pole nime;Kolmainsus;Taskupuru dünamo;Me ei lähe turniirile, sest meil pole nime;JWG;Big Boys
-Maarja Tambet;Buds;JWG;AnCaRa;Anglikaani jazõki vabariik;LG;2 and a half girls;Tallinna Teeninduskool;Midagi Geniaalset;Põlvakad;Me ei lähe turniirile, sest meil pole nime
-Lauri Leas;Marie Under the table;Katoliku 2;2 and a half girls;Buds;Söörömöö;KMP;Tallinna 21. kool;VGS;Buds;May Contain Nuts
-Erik Haamer;Kõrboja peremeeskond;AnCaRa;Big Boys;HMU;kestaMesta;May Contain Nuts;Deb8tractive;JWG;Katoliku 1;HTG 2
-Maria Kull;Deb8tractive;Söörömöö;Katoliku 1;Kõrboja peremeeskond;Taskupuru dünamo;HMU;Follow @ bossekass;Katoliku 2;Tallinna Teeninduskool;AnCaRa
-Karl Martin Jaup;Midagi Geniaalset;Me ei lähe turniirile, sest meil pole nime;Katoliku 2;HTG 2;Tallinna Teeninduskool;VGS;Söörömöö;AnCaRa;Tallinna 21. kool;Katoliku 2
-Siim Ruul;;;May Contain Nuts;Deb8tractive;;;Buds;HMU;HMU;Taskupuru dünamo
-Kristin Parts;Follow @ bossekass;Kolmainsus;;;Midagi Geniaalset;Viimane minut;;;;
-Martin Küüsmaa;Viimane minut;2 and a half girls;Me ei lähe turniirile, sest meil pole nime;kestaMesta;Deb8tractive;Katoliku 2;Big Boys;Katoliku 1;kestaMesta;Nova Mulk
-Carl-Martin Keerberg;kestaMesta;Tallinna Teeninduskool;Kolmainsus;Kaosus;Katoliku 1;Buds;Marie Under the table;Kolmainsus;Deb8tractive;Kaosus
-Maarja Pild;Kaosus;Põlvakad;KMP;Taskupuru dünamo;Marie Under the table;Follow @ bossekass;Kaosus;kestaMesta;;
-Karin Kase;VGS;Katoliku 1;Söörömöö;Follow @ bossekass;JWG;Anglikaani jazõki vabariik;May Contain Nuts;HTG 2;KMP;Kõrboja peremeeskond
-Tõnis Kuusk;LG;May Contain Nuts;Tallinna 21. kool;Viimane minut;HTG 2;Kaosus;2 and a half girls;Põlvakad;VGS;Marie Under the table
-Rynaldo;HTG 2;KMP;;;;;;;Anglikaani jazõki vabariik;Söörömöö
-Helery Maidlas;;;Põlvakad;VGS;Nova Mulk;AnCaRa;Anglikaani jazõki vabariik;Viimane minut;LG;Midagi Geniaalset
+JUDGE;R1PNAME;R1ONAME;R2PNAME;R20NAME;R3PNAME;R3ONAME;R4PNAME;R4ONAME;R5PNAME;R5ONAME;R1P;R1O;R2P;R2O;R3P;R3O;R4P;R4O;R5P;R5O
+Herman Kelomees;Anglikaani jazõki vabariik;Big Boys;JWG;Midagi Geniaalset;Tallinna 21. kool;Põlvakad;Nova Mulk;Kõrboja peremeeskond;2 and a half girls;Follow @ bossekass;239.0;241.5;234.0;231.0;230.0;237.0;234.0;241.0;226.5;257.0
+Triin Toimetaja;Taskupuru dünamo;Tallinna 21. kool;Nova Mulk;Marie Under the table;Big Boys;Kõrboja peremeeskond;KMP;LG;Viimane minut;Kolmainsus;244.5;234.5;241.0;246.5;240.0;239.0;239.0;236.0;239.0;249.0
+Anneliis Rea;HMU;Nova Mulk;Tallinna Teeninduskool;LG;Me ei lähe turniirile, sest meil pole nime;Kolmainsus;Taskupuru dünamo;Me ei lähe turniirile, sest meil pole nime;JWG;Big Boys;247.0;240.5;230.0;235.5;251.0;250.0;255.5;251.5;234.0;238.0
+Maarja Tambet;Buds;JWG;AnCaRa;Anglikaani jazõki vabariik;LG;2 and a half girls;Tallinna Teeninduskool;Midagi Geniaalset;Põlvakad;Me ei lähe turniirile, sest meil pole nime;245.5;237.0;235.5;240.0;238.5;240.5;238.5;241.0;236.5;247.0
+Lauri Leas;Marie Under the table;Katoliku 2;2 and a half girls;Buds;Söörömöö;KMP;Tallinna 21. kool;VGS;Buds;May Contain Nuts;251.5;256.0;231.0;236.5;235.0;239.0;228.5;223.0;258.5;265.0
+Erik Haamer;Kõrboja peremeeskond;AnCaRa;Big Boys;HMU;kestaMesta;May Contain Nuts;Deb8tractive;JWG;Katoliku 1;HTG 2;247.5;238.5;244.0;250.5;252.0;259.5;258.0;245.5;247.0;253.0
+Maria Kull;Deb8tractive;Söörömöö;Katoliku 1;Kõrboja peremeeskond;Taskupuru dünamo;HMU;Follow @ bossekass;Katoliku 2;Tallinna Teeninduskool;AnCaRa;258.5;243.5;242.0;241.0;235.5;242.0;253.5;243.5;238.0;237.0
+Karl Martin Jaup;Midagi Geniaalset;Me ei lähe turniirile, sest meil pole nime;Katoliku 2;HTG 2;Tallinna Teeninduskool;VGS;Söörömöö;AnCaRa;Tallinna 21. kool;Katoliku 2;236.0;245.0;252.0;254.0;215.0;216.0;239.0;234.0;236.5;242.0
+Siim Ruul;;;May Contain Nuts;Deb8tractive;;;Buds;HMU;HMU;Taskupuru dünamo;;;253.0;249.0;;;243.5;241.0;249.5;247.5
+Kristin Parts;Follow @ bossekass;Kolmainsus;;;Midagi Geniaalset;Viimane minut;;;;;252.5;253.0;;;236.5;237.0;;;;
+Martin Küüsmaa;Viimane minut;2 and a half girls;Me ei lähe turniirile, sest meil pole nime;kestaMesta;Deb8tractive;Katoliku 2;Big Boys;Katoliku 1;kestaMesta;Nova Mulk;236.0;237.0;251.0;258.0;253.5;254.0;246.0;246.5;252.0;248.0
+Carl-Martin Keerberg;kestaMesta;Tallinna Teeninduskool;Kolmainsus;Kaosus;Katoliku 1;Buds;Marie Under the table;Kolmainsus;Deb8tractive;Kaosus;255.0;230.0;249.0;263.5;245.0;250.5;233.0;237.0;257.0;263.5
+Maarja Pild;Kaosus;Põlvakad;KMP;Taskupuru dünamo;Marie Under the table;Follow @ bossekass;Kaosus;kestaMesta;;;258.5;230.0;241.5;254.5;249.5;257.0;256.0;254.0;;
+Karin Kase;VGS;Katoliku 1;Söörömöö;Follow @ bossekass;JWG;Anglikaani jazõki vabariik;May Contain Nuts;HTG 2;KMP;Kõrboja peremeeskond;215.5;243.5;239.5;252.0;225.0;223.5;262.0;234.0;238.0;243.0
+Tõnis Kuusk;LG;May Contain Nuts;Tallinna 21. kool;Viimane minut;HTG 2;Kaosus;2 and a half girls;Põlvakad;VGS;Marie Under the table;230.0;247.5;227.5;224.0;259.5;259.0;228.0;227.5;230.0;237.0
+Rynaldo;HTG 2;KMP;;;;;;;Anglikaani jazõki vabariik;Söörömöö;259.5;245.5;;;;;;;240.0;238.5
+Helery Maidlas;;;Põlvakad;VGS;Nova Mulk;AnCaRa;Anglikaani jazõki vabariik;Viimane minut;LG;Midagi Geniaalset;;;231.0;222.5;255.5;242.5;234.0;239.0;244.0;247.0
