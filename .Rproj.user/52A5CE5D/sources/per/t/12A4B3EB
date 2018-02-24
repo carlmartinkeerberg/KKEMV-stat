@@ -8,13 +8,13 @@
     "hash" : "3889434264",
     "id" : "12A4B3EB",
     "lastKnownWriteTime" : 1519497892,
-    "last_content_update" : 1519497892672,
+    "last_content_update" : 1519497892,
     "path" : "~/GitHub/KKEMV-stat/kkemv2.Rmd",
     "project_path" : "kkemv2.Rmd",
     "properties" : {
         "chunk_output_type" : "inline",
         "content_preview_inline" : "true",
-        "cursorPosition" : "75,0",
+        "cursorPosition" : "1,23",
         "scrollLine" : "0"
     },
     "relative_order" : 2,

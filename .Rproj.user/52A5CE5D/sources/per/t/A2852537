@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1519498819525.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A2852537",
+    "lastKnownWriteTime" : 3419473789575321445,
+    "last_content_update" : 1519498819525,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "D8291B44",
+        "caption" : "speakers",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=speakers&cache_key=D8291B44",
+        "displayedObservations" : 62,
+        "environment" : "",
+        "object" : "speakers",
+        "preview" : 0,
+        "totalObservations" : 62,
+        "variables" : 39
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
