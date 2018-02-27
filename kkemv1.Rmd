@@ -1,6 +1,9 @@
 ---
 title: "KKEMV I etapp"
-output: html_notebook
+theme: journal
+output:
+  html_document:
+    df_print: paged
 ---
 ```{r}
 tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/Ietapp.csv",

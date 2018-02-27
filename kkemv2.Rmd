@@ -1,6 +1,9 @@
 ---
 title: "KKEMV II etapp"
-output: html_notebook
+theme: journal
+output:
+  html_document:
+    df_print: paged
 ---
 ```{r}
 tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/IIetapp.csv",
@@ -71,5 +74,26 @@ plot(mean_speakers,
      ylab = "Punkte",
      ylim = c(68, 72),
      type = "b")
+```
+
+```{r}
+judge_mean = data.frame(judges$JUDGE,
+                        as.numeric(judges$R1P),
+                        as.numeric(judges$R1O),
+                        as.numeric(judges$R2P),
+                        as.numeric(judges$R2O),
+                        as.numeric(judges$R3P),
+                        as.numeric(judges$R3O),
+                        as.numeric(judges$R4P),
+                        as.numeric(judges$R4O),
+                        as.numeric(judges$R5P),
+                        as.numeric(judges$R5O))
+
+speaker_mean = data.frame(speakers$TEAM,
+                          as.numeric(speakers$TOTALAVG))
+
+team_mean = data.frame(aggregate(. ~ speakers.TEAM, speaker_mean, sum))
+
+r1 = data.frame(judges$JUDGE, judges$R1PNAME, judges$R1P)
 ```
 

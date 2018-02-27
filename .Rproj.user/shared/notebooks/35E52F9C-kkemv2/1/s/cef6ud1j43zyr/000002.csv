@@ -1,0 +1,3 @@
+"0","totalspeakers = na.omit(data.frame(speakers$SPEAKER, as.numeric(speakers$TOTALAVG)))"
+"0","bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG.),]"
+"0","print(bestspeaker)"

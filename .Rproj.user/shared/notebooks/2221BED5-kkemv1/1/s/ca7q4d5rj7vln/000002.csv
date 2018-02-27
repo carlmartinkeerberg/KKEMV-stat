@@ -1,0 +1,14 @@
+"0","r1_ms = mean(na.omit(as.numeric(speakers$R1AVG)))
+r2_ms = mean(na.omit(as.numeric(speakers$R2AVG)))
+r3_ms = mean(na.omit(as.numeric(speakers$R3AVG)))
+r4_ms = mean(na.omit(as.numeric(speakers$R4AVG)))
+r5_ms = mean(na.omit(as.numeric(speakers$R5AVG)))
+
+mean_speakers = c(r1_ms, r2_ms, r3_ms, r4_ms, r5_ms)
+
+plot(mean_speakers,
+     main = \"Keskmised spiikripunktid lĆ¤bi voorude\",
+     xlab = \"Voor\",
+     ylab = \"Punkte\",
+     ylim = c(68, 72),
+     type = \"b\")"

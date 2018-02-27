@@ -1,0 +1,2 @@
+"0","judges = data.frame(tab[c(127:143), c(1:21)])
+names(judges) = c(tab[c(126), c(1:21)])"
