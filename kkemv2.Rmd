@@ -76,23 +76,26 @@ plot(mean_speakers,
 ```
 
 ```{r}
-judge_mean = data.frame(judges$JUDGE,
-                        as.numeric(judges$R1P),
-                        as.numeric(judges$R1O),
-                        as.numeric(judges$R2P),
-                        as.numeric(judges$R2O),
-                        as.numeric(judges$R3P),
-                        as.numeric(judges$R3O),
-                        as.numeric(judges$R4P),
-                        as.numeric(judges$R4O),
-                        as.numeric(judges$R5P),
-                        as.numeric(judges$R5O))
+library(knitr)
 
-speaker_mean = data.frame(speakers$TEAM,
-                          as.numeric(speakers$TOTALAVG))
+for (r in 1:5){
+  for (j in 1:3){
+    eval(parse(text=paste("kindness_", r, j, "=data.frame(as.numeric(speakers$R", r, "J", j, ")- as.numeric(speakers$TOTALAVG), speakers$R", r, "J", j, "NAME)", sep="")))
+    diff="diff"
+    name="name"
+    eval(parse(text=paste("names(kindness_", r, j, ")=c(", diff, ",", name, ")", sep="")))
+    eval(parse(text=paste("kindness_", r, j, "=aggregate(. ~", name, ", kindness_", r, j, ", mean)", sep="")))
+  }
+}
 
-team_mean = data.frame(aggregate(. ~ speakers.TEAM, speaker_mean, sum))
+diffs = Reduce(function(x, y) merge(x, y, all=TRUE), list(kindness_11, kindness_12, kindness_13,
+                                                                kindness_21, kindness_22, kindness_23,
+                                                                kindness_31, kindness_32, kindness_33,
+                                                                kindness_41, kindness_42, kindness_43,
+                                                                kindness_51, kindness_52, kindness_53))
 
-r1 = data.frame(judges$JUDGE, judges$R1PNAME, judges$R1P)
+diffs = aggregate(.~name, diffs, mean)
+
+kable(diffs, caption = "Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest")
 ```
 
