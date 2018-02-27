@@ -1,6 +1,5 @@
 ---
 title: "KKEMV II etapp"
-theme: yeti
 output:
   html_document:
     df_print: paged
