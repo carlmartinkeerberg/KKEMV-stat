@@ -27,14 +27,6 @@ names(judges) = c(tab[c(83), c(1:21)])
 ```
 
 ```{r}
-totalspeakers = na.omit(data.frame(speakers$SPEAKER, as.numeric(speakers$TOTALAVG)))
-
-bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG.),]
-
-print(bestspeaker)
-```
-
-```{r}
 alltotalavg = na.omit(as.numeric(speakers$TOTALAVG))
 
 meantotalavg = mean(na.omit(as.numeric(speakers$TOTALAVG)))
@@ -93,11 +85,34 @@ diffs = Reduce(function(x, y) merge(x, y, all=TRUE), list(kindness_11, kindness_
                                                                 kindness_51, kindness_52, kindness_53))
 
 diffs = aggregate(.~name, diffs, mean)
+
 names(diffs) = c("Kohtunik", "Erinevus")
 
 diffs = diffs[order(diffs$Erinevus),]
+
 rownames(diffs) = c()
 
 kable(diffs, caption = "Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest")
+```
+
+```{r}
+team_wins_speaks = data.frame(teams$TEAM, as.numeric(teams$TOTAL))
+team_wins_speaks = team_wins_speaks[order(team_wins_speaks$teams.TEAM),]
+
+team_speaks = data.frame(speakers$TEAM, as.numeric(speakers$TOTALAVG))
+names(team_speaks) = c("team", "speaks")
+team_speaks = aggregate(.~team, team_speaks, mean)
+team_speaks = team_speaks[order(team_speaks$team),]
+
+team_wins_speaks$speaks = team_speaks$speaks
+
+fit = glm(team_wins_speaks$as.numeric.teams.TOTAL.~team_wins_speaks$speaks)
+
+plot(team_wins_speaks$speaks, team_wins_speaks$as.numeric.teams.TOTAL.,
+     main = "Tiimi võitude ja tiimi keskmiste spiikripunktide suhe",
+     xlab = "Spiikripunkte",
+     ylab = "Võite")
+
+abline(fit, lwd=2, col="blue")
 ```
 
