@@ -1,0 +1,5 @@
+"0","kable(diffs, caption = ""Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest"")
+"
+"2","Error in kable(diffs, caption = ""Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest"") : 
+  could not find function ""kable""
+"

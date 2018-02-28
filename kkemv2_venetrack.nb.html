@@ -279,7 +279,7 @@ names(speakers) = c(tab[c(1), ])</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwiZm9yIChyIGluIDE6NSl7XG4gIGV2YWwocGFyc2UodGV4dD1wYXN0ZShcImtpbmRuZXNzX1wiLCByLCBcIj1kYXRhLmZyYW1lKGFzLm51bWVyaWMoc3BlYWtlcnMkUlwiLCByLCBcIkoxKS0gYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRyksIHNwZWFrZXJzJFJcIiwgciwgXCJKMU5BTUUpXCIsIHNlcD1cIlwiKSkpXG4gIGRpZmY9XCJkaWZmXCJcbiAgbmFtZT1cIm5hbWVcIlxuICBldmFsKHBhcnNlKHRleHQ9cGFzdGUoXCJuYW1lcyhraW5kbmVzc19cIiwgciwgXCIpPWMoXCIsIGRpZmYsIFwiLFwiLCBuYW1lLCBcIilcIiwgc2VwPVwiXCIpKSlcbn0iLCIiLCJkaWZmcyA9IFJlZHVjZShmdW5jdGlvbih4LCB5KSBtZXJnZSh4LCB5LCBhbGw9VFJVRSksIGxpc3Qoa2luZG5lc3NfMSwga2luZG5lc3NfMiwga2luZG5lc3NfMywga2luZG5lc3NfNCwga2luZG5lc3NfNSkpIiwiIiwiZGlmZnMgPSBhZ2dyZWdhdGUoLn5uYW1lLCBkaWZmcywgbWVhbikiLCIiLCJuYW1lcyhkaWZmcykgPSBjKFwiS29odHVuaWtcIiwgXCJFcmluZXZ1c1wiKSIsIiIsImRpZmZzID0gZGlmZnNbb3JkZXIoZGlmZnMkRXJpbmV2dXMpLF0iLCIiLCJrYWJsZShkaWZmcywgY2FwdGlvbiA9IFwiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0XCIpIl19 -->
+<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwiZm9yIChyIGluIDE6NSl7XG4gIGV2YWwocGFyc2UodGV4dD1wYXN0ZShcImtpbmRuZXNzX1wiLCByLCBcIj1kYXRhLmZyYW1lKGFzLm51bWVyaWMoc3BlYWtlcnMkUlwiLCByLCBcIkoxKS0gYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRyksIHNwZWFrZXJzJFJcIiwgciwgXCJKMU5BTUUpXCIsIHNlcD1cIlwiKSkpXG4gIGRpZmY9XCJkaWZmXCJcbiAgbmFtZT1cIm5hbWVcIlxuICBldmFsKHBhcnNlKHRleHQ9cGFzdGUoXCJuYW1lcyhraW5kbmVzc19cIiwgciwgXCIpPWMoXCIsIGRpZmYsIFwiLFwiLCBuYW1lLCBcIilcIiwgc2VwPVwiXCIpKSlcbn0iLCIiLCJkaWZmcyA9IFJlZHVjZShmdW5jdGlvbih4LCB5KSBtZXJnZSh4LCB5LCBhbGw9VFJVRSksIGxpc3Qoa2luZG5lc3NfMSwga2luZG5lc3NfMiwga2luZG5lc3NfMywga2luZG5lc3NfNCwga2luZG5lc3NfNSkpIiwiIiwiZGlmZnMgPSBhZ2dyZWdhdGUoLn5uYW1lLCBkaWZmcywgbWVhbikiLCIiLCJuYW1lcyhkaWZmcykgPSBjKFwiS29odHVuaWtcIiwgXCJFcmluZXZ1c1wiKSIsIiIsImRpZmZzID0gZGlmZnNbb3JkZXIoZGlmZnMkRXJpbmV2dXMpLF0iLCIiLCJyb3duYW1lcyhkaWZmcykgPSBjKCkiLCIiLCJrYWJsZShkaWZmcywgY2FwdGlvbiA9IFwiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0XCIpIl19 -->
 <pre class="r"><code>library(knitr)
 
 for (r in 1:5){
@@ -297,65 +297,56 @@ names(diffs) = c(&quot;Kohtunik&quot;, &quot;Erinevus&quot;)
 
 diffs = diffs[order(diffs$Erinevus),]
 
+rownames(diffs) = c()
+
 kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest&quot;)</code></pre>
 <!-- rnb-source-end -->
 <table>
 <caption>Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest</caption>
 <thead>
 <tr class="header">
-<th></th>
 <th align="left">Kohtunik</th>
 <th align="right">Erinevus</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>9</td>
 <td align="left">Vlad (25)</td>
 <td align="right">-2.0363636</td>
 </tr>
 <tr class="even">
-<td>3</td>
 <td align="left">Leonid</td>
 <td align="right">-1.5880000</td>
 </tr>
 <tr class="odd">
-<td>1</td>
 <td align="left">Andrei</td>
 <td align="right">-0.8888889</td>
 </tr>
 <tr class="even">
-<td>5</td>
 <td align="left">Polina</td>
 <td align="right">-0.8038462</td>
 </tr>
 <tr class="odd">
-<td>7</td>
 <td align="left">Viktoria</td>
 <td align="right">0.0111111</td>
 </tr>
 <tr class="even">
-<td>8</td>
 <td align="left">Vladimir</td>
 <td align="right">0.3913043</td>
 </tr>
 <tr class="odd">
-<td>4</td>
 <td align="left">Pjotr</td>
 <td align="right">0.4086957</td>
 </tr>
 <tr class="even">
-<td>10</td>
 <td align="left">Jana</td>
 <td align="right">1.4727273</td>
 </tr>
 <tr class="odd">
-<td>2</td>
 <td align="left">Ilja</td>
 <td align="right">1.5222222</td>
 </tr>
 <tr class="even">
-<td>6</td>
 <td align="left">Sergei</td>
 <td align="right">2.0421053</td>
 </tr>
@@ -365,7 +356,7 @@ kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmist
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCnRhYiA9IHJlYWQuY3N2KCJjOi9Vc2Vycy9jYXJsbS9EZXNrdG9wL3RhYi5jc3YiLA0KICAgICAgICAgICAgICAgaGVhZGVyID0gRiwNCiAgICAgICAgICAgICAgIHNlcCA9ICI7IiwNCiAgICAgICAgICAgICAgIGVuY29kaW5nID0gIlVURi04IiwNCiAgICAgICAgICAgICAgIGRlYyA9ICIuIiwNCiAgICAgICAgICAgICAgIHN0cmluZ3NBc0ZhY3RvcnMgPSBGKQ0KYGBgDQoNCmBgYHtyfQ0Kc3BlYWtlcnMgPSBkYXRhLmZyYW1lKHRhYltjKDI6NDkpLF0pDQpuYW1lcyhzcGVha2VycykgPSBjKHRhYltjKDEpLCBdKQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShrbml0cikNCg0KZm9yIChyIGluIDE6NSl7DQogIGV2YWwocGFyc2UodGV4dD1wYXN0ZSgia2luZG5lc3NfIiwgciwgIj1kYXRhLmZyYW1lKGFzLm51bWVyaWMoc3BlYWtlcnMkUiIsIHIsICJKMSktIGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpLCBzcGVha2VycyRSIiwgciwgIkoxTkFNRSkiLCBzZXA9IiIpKSkNCiAgZGlmZj0iZGlmZiINCiAgbmFtZT0ibmFtZSINCiAgZXZhbChwYXJzZSh0ZXh0PXBhc3RlKCJuYW1lcyhraW5kbmVzc18iLCByLCAiKT1jKCIsIGRpZmYsICIsIiwgbmFtZSwgIikiLCBzZXA9IiIpKSkNCn0NCg0KZGlmZnMgPSBSZWR1Y2UoZnVuY3Rpb24oeCwgeSkgbWVyZ2UoeCwgeSwgYWxsPVRSVUUpLCBsaXN0KGtpbmRuZXNzXzEsIGtpbmRuZXNzXzIsIGtpbmRuZXNzXzMsIGtpbmRuZXNzXzQsIGtpbmRuZXNzXzUpKQ0KDQpkaWZmcyA9IGFnZ3JlZ2F0ZSgufm5hbWUsIGRpZmZzLCBtZWFuKQ0KDQpuYW1lcyhkaWZmcykgPSBjKCJLb2h0dW5payIsICJFcmluZXZ1cyIpDQoNCmRpZmZzID0gZGlmZnNbb3JkZXIoZGlmZnMkRXJpbmV2dXMpLF0NCg0Ka2FibGUoZGlmZnMsIGNhcHRpb24gPSAiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0IikNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCnRhYiA9IHJlYWQuY3N2KCJjOi9Vc2Vycy9jYXJsbS9EZXNrdG9wL3RhYi5jc3YiLA0KICAgICAgICAgICAgICAgaGVhZGVyID0gRiwNCiAgICAgICAgICAgICAgIHNlcCA9ICI7IiwNCiAgICAgICAgICAgICAgIGVuY29kaW5nID0gIlVURi04IiwNCiAgICAgICAgICAgICAgIGRlYyA9ICIuIiwNCiAgICAgICAgICAgICAgIHN0cmluZ3NBc0ZhY3RvcnMgPSBGKQ0KYGBgDQoNCmBgYHtyfQ0Kc3BlYWtlcnMgPSBkYXRhLmZyYW1lKHRhYltjKDI6NDkpLF0pDQpuYW1lcyhzcGVha2VycykgPSBjKHRhYltjKDEpLCBdKQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShrbml0cikNCg0KZm9yIChyIGluIDE6NSl7DQogIGV2YWwocGFyc2UodGV4dD1wYXN0ZSgia2luZG5lc3NfIiwgciwgIj1kYXRhLmZyYW1lKGFzLm51bWVyaWMoc3BlYWtlcnMkUiIsIHIsICJKMSktIGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpLCBzcGVha2VycyRSIiwgciwgIkoxTkFNRSkiLCBzZXA9IiIpKSkNCiAgZGlmZj0iZGlmZiINCiAgbmFtZT0ibmFtZSINCiAgZXZhbChwYXJzZSh0ZXh0PXBhc3RlKCJuYW1lcyhraW5kbmVzc18iLCByLCAiKT1jKCIsIGRpZmYsICIsIiwgbmFtZSwgIikiLCBzZXA9IiIpKSkNCn0NCg0KZGlmZnMgPSBSZWR1Y2UoZnVuY3Rpb24oeCwgeSkgbWVyZ2UoeCwgeSwgYWxsPVRSVUUpLCBsaXN0KGtpbmRuZXNzXzEsIGtpbmRuZXNzXzIsIGtpbmRuZXNzXzMsIGtpbmRuZXNzXzQsIGtpbmRuZXNzXzUpKQ0KDQpkaWZmcyA9IGFnZ3JlZ2F0ZSgufm5hbWUsIGRpZmZzLCBtZWFuKQ0KDQpuYW1lcyhkaWZmcykgPSBjKCJLb2h0dW5payIsICJFcmluZXZ1cyIpDQoNCmRpZmZzID0gZGlmZnNbb3JkZXIoZGlmZnMkRXJpbmV2dXMpLF0NCg0Kcm93bmFtZXMoZGlmZnMpID0gYygpDQoNCmthYmxlKGRpZmZzLCBjYXB0aW9uID0gIktvaHR1bmlrdSBrZXNrbWluZSBrw7VydmFsZWthbGxlIGvDtW5lbGVqYSBrZXNrbWlzdGVzdCBzcGlpa3JpdGVzdCIpDQpgYGANCg0K</div>
 
 
 

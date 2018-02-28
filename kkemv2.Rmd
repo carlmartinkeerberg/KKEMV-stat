@@ -96,6 +96,7 @@ diffs = aggregate(.~name, diffs, mean)
 names(diffs) = c("Kohtunik", "Erinevus")
 
 diffs = diffs[order(diffs$Erinevus),]
+rownames(diffs) = c()
 
 kable(diffs, caption = "Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest")
 ```
