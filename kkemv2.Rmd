@@ -93,6 +93,7 @@ diffs = Reduce(function(x, y) merge(x, y, all=TRUE), list(kindness_11, kindness_
                                                                 kindness_51, kindness_52, kindness_53))
 
 diffs = aggregate(.~name, diffs, mean)
+names(diffs) = c("Kohtunik", "Erinevus")
 
 kable(diffs, caption = "Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest")
 ```
