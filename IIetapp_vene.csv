@@ -1,0 +1,79 @@
+SPEAKER;TEAM;SCHOOL;TOTALAVG;R1AVG;R2AVG;R3AVG;R4AVG;R5AVG;R1J1;R1J2;R1J3;R2J1;R2J2;R2J3;R3J1;R3J2;R3J3;R4J1;R4J2;R4J3;R5J1;R5J2;R5J3;R1J1NAME;R1J2NAME;R1J3NAME;R2J1NAME;R2J2NAME;R2J3NAME;R3J1NAME;R3J2NAME;R3J3NAME;R4J1NAME;R4J2NAME;R4J3NAME;R5J1NAME;R5J2NAME;R5J3NAME
+Sofija Fišer;1984;Mustamäe Humanitaar/Juudi k/Tallina Hum G;69.0;67.0;67.0;71.0;68.0;72.0;67;;;67;;;71;;;68;;;72;;;Andrei;;;Leonid;;;Jana;;;Pjotr;;;Ilja;;
+Kristina Kutuzova;1984;Mustamäe Humanitaar/Juudi k/Tallina Hum G;69.4;66.0;70.0;69.0;69.0;73.0;66;;;70;;;69;;;69;;;73;;;Andrei;;;Leonid;;;Jana;;;Pjotr;;;Ilja;;
+Ivan Ermakov;1984;Mustamäe Humanitaar/Juudi k/Tallina Hum G;69.0;68.0;65.0;70.0;69.0;73.0;68;;;65;;;70;;;69;;;73;;;Andrei;;;Leonid;;;Jana;;;Pjotr;;;Ilja;;
+Dmitri Ossipov;2+2=5;Linnamäe Vene;65.4;67.0;66.0;62.0;69.0;63.0;67;;;66;;;62;;;69;;;63;;;Polina;;;Pjotr;;;Leonid;;;Jana;;;Leonid;;
+Diana Ignatenko;2+2=5;Linnamäe Vene;65.8;65.0;68.0;63.0;68.0;65.0;65;;;68;;;63;;;68;;;65;;;Polina;;;Pjotr;;;Leonid;;;Jana;;;Leonid;;
+Nikita Budovey;2+2=5;Linnamäe Vene;65.8;66.0;67.0;63.0;69.0;64.0;66;;;67;;;63;;;69;;;64;;;Polina;;;Pjotr;;;Leonid;;;Jana;;;Leonid;;
+Valentina Sergeeva;Dizoksiribonukleinovaja kislota;Juudi kool;70.2;72.0;68.0;70.0;69.0;72.0;72;;;68;;;70;;;69;;;72;;;Sergei;;;Viktoria;;;Vladimir;;;Viktoria;;;Pjotr;;
+Diana Malinina;Dizoksiribonukleinovaja kislota;Juudi kool;70.2;73.0;68.0;71.0;69.0;70.0;73;;;68;;;71;;;69;;;70;;;Sergei;;;Viktoria;;;Vladimir;;;Viktoria;;;Pjotr;;
+Anna Tsugunova;Dizoksiribonukleinovaja kislota;Juudi kool;69.2;72.0;68.0;68.0;69.0;69.0;72;;;68;;;68;;;69;;;69;;;Sergei;;;Viktoria;;;Vladimir;;;Viktoria;;;Pjotr;;
+Maxim Borodin;Chernika;Õismäe Vene;70.0;70.0;70.0;70.0;70.0;70.0;70;;;70;;;70;;;70;;;70;;;Ilja;;;Andrei;;;Polina;;;Sergei;;;Viktoria;;
+David Rozenblit;Chernika;Õismäe Vene;72.0;75.0;72.0;69.0;73.0;71.0;75;;;72;;;69;;;73;;;71;;;Ilja;;;Andrei;;;Polina;;;Sergei;;;Viktoria;;
+Pavel Kornyshev;Klub 27;Tallinna Humanitaar x2/Mustamäe Humanitaar;71.6;71.0;72.0;73.0;68.0;74.0;71;;;72;;;73;;;68;;;74;;;Vladimir;;;Ilja;;;Pjotr;;;Vlad (25);;;Sergei;;
+Polina Kopõlova;Klub 27;Tallinna Humanitaar x2/Mustamäe Humanitaar;71.6;70.0;72.0;72.0;69.0;75.0;70;;;72;;;72;;;69;;;75;;;Vladimir;;;Ilja;;;Pjotr;;;Vlad (25);;;Sergei;;
+Vladislav Konstantinov;Klub 27;Tallinna Humanitaar x2/Mustamäe Humanitaar;73.8;73.0;75.0;74.0;72.0;75.0;73;;;75;;;74;;;72;;;75;;;Vladimir;;;Ilja;;;Pjotr;;;Vlad (25);;;Sergei;;
+Semyon Sukhotin;Klub kozhevnikov ;Linnamäe Vene;64.5;64.0;66.0;65.0;63.0;;64;;;66;;;65;;;63;;;;;;Leonid;;;Polina;;;Leonid;;;Leonid;;;;;
+Jorgen Vimberg;Klub kozhevnikov ;Linnamäe Vene;62.0;;;;;62.0;;;;;;;;;;;;;62;;;;;;;;;;;;;;;Polina;;
+Kirill Tint;Klub kozhevnikov ;Linnamäe Vene;64.2;62.0;67.0;64.0;64.0;64.0;62;;;67;;;64;;;64;;;64;;;Leonid;;;Polina;;;Leonid;;;Leonid;;;Polina;;
+Dmitri Rechutin;Klub kozhevnikov ;Linnamäe Vene;63.6;62.0;66.0;65.0;62.0;63.0;62;;;66;;;65;;;62;;;63;;;Leonid;;;Polina;;;Leonid;;;Leonid;;;Polina;;
+Eva Lennuk;Inkognito;Pähklimäe x2/Narva Eesti G;68.4;65.0;73.0;68.0;67.0;69.0;65;;;73;;;68;;;67;;;69;;;Leonid;;;Ilja;;;Polina;;;Vladimir;;;Viktoria;;
+Kristina Panchenko;Inkognito;Pähklimäe x2/Narva Eesti G;69.0;68.0;70.0;70.0;68.0;69.0;68;;;70;;;70;;;68;;;69;;;Leonid;;;Ilja;;;Polina;;;Vladimir;;;Viktoria;;
+Anna Panekvišjute;Inkognito;Pähklimäe x2/Narva Eesti G;70.0;66.0;73.0;71.0;70.0;70.0;66;;;73;;;71;;;70;;;70;;;Leonid;;;Ilja;;;Polina;;;Vladimir;;;Viktoria;;
+Vladislav Tšagin;Krasnij, red, punane;Sillamäe;65.4;68.0;67.0;65.0;60.0;67.0;68;;;67;;;65;;;60;;;67;;;Polina;;;Viktoria;;;Ilja;;;Vlad (25);;;Ilja;;
+Mihhail Vassiljev;Krasnij, red, punane;Sillamäe;69.6;68.0;70.0;70.0;67.0;73.0;68;;;70;;;70;;;67;;;73;;;Polina;;;Viktoria;;;Ilja;;;Vlad (25);;;Ilja;;
+Aleksei Tregubov;Krasnij, red, punane;Sillamäe;69.2;68.0;71.0;69.0;69.0;69.0;68;;;71;;;69;;;69;;;69;;;Polina;;;Viktoria;;;Ilja;;;Vlad (25);;;Ilja;;
+Lolita TImofejeva;LDL;Jõhvi Vene G x2/Ahtme;65.2;70.0;66.0;66.0;62.0;62.0;70;;;66;;;66;;;62;;;62;;;Sergei;;;Vladimir;;;Andrei;;;Leonid;;;Leonid;;
+Valeriya Seleznjova;LDL;Jõhvi Vene G x2/Ahtme;64.6;70.0;65.0;65.0;61.0;62.0;70;;;65;;;65;;;61;;;62;;;Sergei;;;Vladimir;;;Andrei;;;Leonid;;;Leonid;;
+Danila Zarubin;LDL;Jõhvi Vene G x2/Ahtme;65.6;69.0;69.0;65.0;62.0;63.0;69;;;69;;;65;;;62;;;63;;;Sergei;;;Vladimir;;;Andrei;;;Leonid;;;Leonid;;
+German Ivanov;Stolichnaya;Tallinna Kesklinna Vene G x2/Tõnismäe Reaal;72.2;70.0;73.0;73.0;73.0;72.0;70;;;73;;;73;;;73;;;72;;;Andrei;;;Vlad (25);;;Pjotr;;;Viktoria;;;Pjotr;;
+Karina Põdra;Stolichnaya;Tallinna Kesklinna Vene G x2/Tõnismäe Reaal;72.2;72.0;70.0;73.0;73.0;73.0;72;;;70;;;73;;;73;;;73;;;Andrei;;;Vlad (25);;;Pjotr;;;Viktoria;;;Pjotr;;
+Ilja Freiberg;Stolichnaya;Tallinna Kesklinna Vene G x2/Tõnismäe Reaal;69.8;69.0;68.0;70.0;72.0;70.0;69;;;68;;;70;;;72;;;70;;;Andrei;;;Vlad (25);;;Pjotr;;;Viktoria;;;Pjotr;;
+Aleksei Shevljuga;Supersaurus;;66.6;68.0;67.0;67.0;65.0;66.0;68;;;67;;;67;;;65;;;66;;;Vladimir;;;Polina;;;Jana;;;Polina;;;Andrei;;
+Kristjan Kuldmaa;Supersaurus;;66.0;65.0;67.0;68.0;64.0;66.0;65;;;67;;;68;;;64;;;66;;;Vladimir;;;Polina;;;Jana;;;Polina;;;Andrei;;
+Sofija Kissina;Supersaurus;;67.2;68.0;68.0;69.0;65.0;66.0;68;;;68;;;69;;;65;;;66;;;Vladimir;;;Polina;;;Jana;;;Polina;;;Andrei;;
+Nicole Ivanova;Piggley;;69.6;70.0;71.0;71.0;65.0;71.0;70;;;71;;;71;;;65;;;71;;;Pjotr;;;Andrei;;;Sergei;;;Vladimir;;;Sergei;;
+Aljona Kuropatkina;Piggley;;67.6;67.0;65.0;71.0;64.0;71.0;67;;;65;;;71;;;64;;;71;;;Pjotr;;;Andrei;;;Sergei;;;Vladimir;;;Sergei;;
+Natacha Krukovskaya Carvalheiro;Piggley;;68.6;68.0;67.0;72.0;65.0;71.0;68;;;67;;;72;;;65;;;71;;;Pjotr;;;Andrei;;;Sergei;;;Vladimir;;;Sergei;;
+Dmitri Tenin;Juventa;;66.6;67.0;69.0;68.0;67.0;62.0;67;;;69;;;68;;;67;;;62;;;Viktoria;;;Vladimir;;;Ilja;;;Pjotr;;;Polina;;
+Jana Semjonova;Juventa;;65.4;66.0;68.0;65.0;66.0;62.0;66;;;68;;;65;;;66;;;62;;;Viktoria;;;Vladimir;;;Ilja;;;Pjotr;;;Polina;;
+Anneli Virts;Juventa;;67.4;68.0;72.0;68.0;66.0;63.0;68;;;72;;;68;;;66;;;63;;;Viktoria;;;Vladimir;;;Ilja;;;Pjotr;;;Polina;;
+Oleg Erelt;Neirony;;65.6;66.0;67.0;63.0;68.0;64.0;66;;;67;;;63;;;68;;;64;;;Pjotr;;;Leonid;;;Andrei;;;Jana;;;Andrei;;
+Anton Novi;Neirony;;65.0;68.0;66.0;64.0;63.0;64.0;68;;;66;;;64;;;63;;;64;;;Pjotr;;;Leonid;;;Andrei;;;Jana;;;Andrei;;
+Arseni Zadvornov;Neirony;;67.0;70.0;65.0;66.0;68.0;66.0;70;;;65;;;66;;;68;;;66;;;Pjotr;;;Leonid;;;Andrei;;;Jana;;;Andrei;;
+Aleksandra Jegorova;Kiisupere;;69.0;69.0;67.0;70.0;68.0;71.0;69;;;67;;;70;;;68;;;71;;;Ilja;;;Vlad (25);;;Vladimir;;;Sergei;;;Vladimir;;
+Maria Ševtšuk;Kiisupere;;70.0;74.0;69.0;69.0;69.0;69.0;74;;;69;;;69;;;69;;;69;;;Ilja;;;Vlad (25);;;Vladimir;;;Sergei;;;Vladimir;;
+Anzhelika Bõkova;Kiisupere;;71.8;75.0;70.0;71.0;70.0;73.0;75;;;70;;;71;;;70;;;73;;;Ilja;;;Vlad (25);;;Vladimir;;;Sergei;;;Vladimir;;
+Klim Klimenko;Baklazhanovtsy;;69.2;67.0;69.0;71.0;66.0;73.0;67;;;69;;;71;;;66;;;73;;;Viktoria;;;Pjotr;;;Sergei;;;Polina;;;Vladimir;;
+Timofei Beresnjev;Baklazhanovtsy;;68.0;67.0;66.0;71.0;64.0;72.0;67;;;66;;;71;;;64;;;72;;;Viktoria;;;Pjotr;;;Sergei;;;Polina;;;Vladimir;;
+Artemi Sotskov;Baklazhanovtsy;;67.6;67.0;67.0;70.0;64.0;70.0;67;;;67;;;70;;;64;;;70;;;Viktoria;;;Pjotr;;;Sergei;;;Polina;;;Vladimir;;
+TEAM;TOTAL;R1;R2;R3;R4;R4;R1J1;R1J2;R1J3;R2J1;R2J2;R2J3;R3J1;R3J2;R3J3;R4J1;R4J2;R4J3;R5J1;R5J2;R5J3;R1VS;R2VS;R3VS;R4VS;R5VS
+1984;4;0;1;1;1;1;0;;;3;;;3;;;3;;;3;;;Stolichnaya;Neirony;Supersaurus;Juventa;Krasnij, red, punane
+2+2=5;2;0;0;0;1;1;0;;;0;;;0;;;3;;;3;;;Krasnij, red, punane;Baklazhanovtsy;Klub kozhevnikov ;Neirony;LDL
+Dizoksiribonukleinovaja kislota;2;1;0;1;0;0;3;;;0;;;3;;;0;;;0;;;LDL;Krasnij, red, punane;Kiisupere;Stolichnaya;Stolichnaya
+Chernika;3;0;1;0;1;1;0;;;3;;;0;;;3;;;3;;;Kiisupere;Piggley;Inkognito;Kiisupere;Inkognito
+Klub 27;5;1;1;1;1;1;3;;;3;;;3;;;3;;;3;;;Supersaurus;Inkognito;Stolichnaya;Krasnij, red, punane;Piggley
+Klub kozhevnikov ;3;0;0;1;1;1;0;;;0;;;3;;;3;;;3;;;Inkognito;Supersaurus;2+2=5;LDL;Juventa
+Inkognito;3;1;0;1;1;0;3;;;0;;;3;;;3;;;0;;;Klub kozhevnikov ;Klub 27;Chernika;Piggley;Chernika
+Krasnij, red, punane;3;1;1;1;0;0;3;;;3;;;3;;;0;;;0;;;2+2=5;Dizoksiribonukleinovaja kislota;Juventa;Klub 27;1984
+LDL;1;0;0;1;0;0;0;;;0;;;3;;;0;;;0;;;Dizoksiribonukleinovaja kislota;Juventa;Neirony;Klub kozhevnikov ;2+2=5
+Stolichnaya;4;1;1;0;1;1;3;;;3;;;0;;;3;;;3;;;1984;Kiisupere;Klub 27;Dizoksiribonukleinovaja kislota;Dizoksiribonukleinovaja kislota
+Supersaurus;2;0;1;0;0;1;0;;;3;;;0;;;0;;;3;;;Klub 27;Klub kozhevnikov ;1984;Baklazhanovtsy;Neirony
+Piggley;2;1;0;1;0;0;3;;;0;;;3;;;0;;;0;;;Neirony;Chernika;Baklazhanovtsy;Inkognito;Klub 27
+Juventa;2;1;1;0;0;0;3;;;3;;;0;;;0;;;0;;;Baklazhanovtsy;LDL;Krasnij, red, punane;1984;Klub kozhevnikov 
+Neirony;0;0;0;0;0;0;0;;;0;;;0;;;0;;;0;;;Piggley;1984;LDL;2+2=5;Supersaurus
+Kiisupere;1;1;0;0;0;0;3;;;0;;;0;;;0;;;0;;;Chernika;Stolichnaya;Dizoksiribonukleinovaja kislota;Chernika;Baklazhanovtsy
+Baklazhanovtsy;3;0;1;0;1;1;0;;;3;;;0;;;3;;;3;;;Juventa;2+2=5;Piggley;Supersaurus;Kiisupere
+JUDGE;R1PNAME;R1ONAME;R2PNAME;R20NAME;R3PNAME;R3ONAME;R4PNAME;R4ONAME;R5PNAME;R5ONAME;R1P;R1O;R2P;R2O;R3P;R3O;R4P;R4O;R5P;R5O
+Vlad (25);;;Stolichnaya;Kiisupere;;;Klub 27;Krasnij, red, punane;;;;;211.0;206.0;;;209.0;196.0;;
+Ilja;Kiisupere;Chernika;Inkognito;Klub 27;Juventa;Krasnij, red, punane;;;Krasnij, red, punane;1984;218.0;217.0;216.0;219.0;201.0;204.0;;;209.0;218.0
+Viktoria;Juventa;Baklazhanovtsy;Krasnij, red, punane;Dizoksiribonukleinovaja kislota;;;Stolichnaya;Dizoksiribonukleinovaja kislota;Chernika;Inkognito;201.0;201.0;208.0;204.0;;;218.0;207.0;210.0;208.0
+Valentin;;;;;;;;;;;;;;;;;;;;
+Pjotr;Piggley;Neirony;Baklazhanovtsy;2+2=5;Klub 27;Stolichnaya;Juventa;1984;Stolichnaya;Dizoksiribonukleinovaja kislota;205.0;204.0;202.0;201.0;219.0;216.0;199.0;206.0;215.0;211.0
+Vladimir;Klub 27;Supersaurus;LDL;Juventa;Kiisupere;Dizoksiribonukleinovaja kislota;Piggley;Inkognito;Baklazhanovtsy;Kiisupere;214.0;201.0;200.0;209.0;210.0;209.0;194.0;205.0;215.0;213.0
+Andrei;1984;Stolichnaya;Chernika;Piggley;LDL;Neirony;;;Supersaurus;Neirony;201.0;211.0;210.0;203.0;196.0;193.0;;;198.0;194.0
+Polina;2+2=5;Krasnij, red, punane;Supersaurus;Klub kozhevnikov ;Chernika;Inkognito;Baklazhanovtsy;Supersaurus;Juventa;Klub kozhevnikov ;198.0;204.0;202.0;199.0;207.0;209.0;194.0;194.0;187.0;189.0
+Leonid;Klub kozhevnikov ;Inkognito;Neirony;1984;2+2=5;Klub kozhevnikov ;LDL;Klub kozhevnikov ;LDL;2+2=5;188.0;199.0;198.0;202.0;188.0;194.0;185.0;189.0;187.0;192.0
+Sergei;Dizoksiribonukleinovaja kislota;LDL;;;Baklazhanovtsy;Piggley;Kiisupere;Chernika;Klub 27;Piggley;217.0;209.0;;;212.0;214.0;207.0;205.0;224.0;213.0
+Jana;;;;;Supersaurus;1984;Neirony;2+2=5;;;;;;;204.0;210.0;199.0;206.0;;
+Anastassia (ifneedbe);;;;;;;;;;;;;;;;;;;;
