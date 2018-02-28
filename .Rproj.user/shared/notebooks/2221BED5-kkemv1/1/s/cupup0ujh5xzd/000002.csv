@@ -1,3 +1,8 @@
-"0","totalspeakers = na.omit(data.frame(speakers$SPEAKER, as.numeric(speakers$TOTALAVG)))"
-"0","bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG.),]"
-"0","print(bestspeaker)"
+"0","totalspeakers = na.omit(data.frame(speakers$SPEAKER, as.numeric(speakers$TOTALAVG)))
+
+bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG.),]
+
+print(bestspeaker)"
+"1","      speakers.SPEAKER as.numeric.speakers.TOTALAVG.
+28 Oskar Samuel Rebane                          75.4
+"

@@ -95,6 +95,8 @@ diffs = Reduce(function(x, y) merge(x, y, all=TRUE), list(kindness_11, kindness_
 diffs = aggregate(.~name, diffs, mean)
 names(diffs) = c("Kohtunik", "Erinevus")
 
+#PS! Käesolev meetod loob "feedback loop"-i, sest võrreldakse kohtuniku antud punkte keskmiste punktidega, mida osaliselt mõjutavad sellesama kohtuniku punktid.
+
 kable(diffs, caption = "Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest")
 ```
 
