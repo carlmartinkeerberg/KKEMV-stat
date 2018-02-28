@@ -87,12 +87,6 @@ diffs = Reduce(function(x, y) merge(x, y, all=TRUE), list(kindness_1, kindness_2
 
 diffs = aggregate(.~name, diffs, mean)
 
-names(diffs) = c("Kohtunik", "Erinevus")
-
-diffs = diffs[order(diffs$Erinevus),]
-
-rownames(diffs) = c()
-
 speaker_sd = sd(as.numeric(speakers$TOTALAVG), na.rm=T)
 
 diffs$diff_div_sd = diffs$Erinevus/speaker_sd

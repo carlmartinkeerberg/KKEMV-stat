@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1519830012697.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "626007336",
+    "id" : "55381CB9",
+    "lastKnownWriteTime" : 1519830724,
+    "last_content_update" : 1519830757677,
+    "path" : "~/GitHub/KKEMV-stat/kkemv2_venetrack.Rmd",
+    "project_path" : "kkemv2_venetrack.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "42,0",
+        "scrollLine" : "2",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
