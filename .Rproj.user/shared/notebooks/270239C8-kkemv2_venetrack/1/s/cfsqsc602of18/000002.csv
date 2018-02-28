@@ -1,0 +1,20 @@
+"0","library(knitr)
+
+for (r in 1:5){
+  eval(parse(text=paste(\"kindness_\", r, \"=data.frame(as.numeric(speakers$R\", r, \"J1)- as.numeric(speakers$TOTALAVG), speakers$R\", r, \"J1NAME)\", sep=\"\")))
+  diff=\"diff\"
+  name=\"name\"
+  eval(parse(text=paste(\"names(kindness_\", r, \")=c(\", diff, \",\", name, \")\", sep=\"\")))
+}
+
+diffs = Reduce(function(x, y) merge(x, y, all=TRUE), list(kindness_1, kindness_2, kindness_3, kindness_4, kindness_5))
+
+diffs = aggregate(.~name, diffs, mean)
+
+names(diffs) = c(\"Kohtunik\", \"Erinevus\")
+
+diffs = diffs[order(diffs$Erinevus),]
+
+rownames(diffs) = c()
+
+kable(diffs, caption = \"Kohtuniku keskmine kĆµrvalekalle kĆµneleja keskmistest spiikritest\")"

@@ -1,10 +1,10 @@
 ---
-title: "R Notebook"
+title: "KKEMV II etapp venekeelne track"
 output: html_notebook
 ---
 
 ```{r}
-tab = read.csv("c:/Users/carlm/Desktop/tab.csv",
+tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/IIetapp_vene.csv",
                header = F,
                sep = ";",
                encoding = "UTF-8",

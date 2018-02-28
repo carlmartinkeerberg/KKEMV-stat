@@ -1,2 +1,0 @@
-"0","speakers = data.frame(tab[c(2:63),])"
-"0","names(speakers) = c(tab[c(1), ])"
