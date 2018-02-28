@@ -1,8 +1,0 @@
-"0","totalspeakers = na.omit(data.frame(speakers$SPEAKER, as.numeric(speakers$TOTALAVG)))
-
-bestspeaker = totalspeakers[which.max(totalspeakers$as.numeric.speakers.TOTALAVG.),]
-
-print(bestspeaker)"
-"1","   speakers.SPEAKER as.numeric.speakers.TOTALAVG.
-43 James Paul Arney                         74.13
-"

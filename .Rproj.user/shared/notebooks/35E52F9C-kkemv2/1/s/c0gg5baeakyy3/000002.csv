@@ -17,4 +17,6 @@
 "0","names(diffs) = c(""Kohtunik"", ""Erinevus"")"
 "0","diffs = diffs[order(diffs$Erinevus),]"
 "0","rownames(diffs) = c()"
+"0","speaker_sd = sd(as.numeric(speakers$TOTALAVG), na.rm=T)"
+"0","diffs$diff_div_sd = diffs$Erinevus/speaker_sd"
 "0","kable(diffs, caption = ""Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest"")"
