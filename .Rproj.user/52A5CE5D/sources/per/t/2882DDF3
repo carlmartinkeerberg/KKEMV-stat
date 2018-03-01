@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1519947569882.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2734976672",
+    "id" : "2882DDF3",
+    "lastKnownWriteTime" : 1519948327,
+    "last_content_update" : 1519948327335,
+    "path" : "~/GitHub/KKEMV-stat/kkemv2.Rmd",
+    "project_path" : "kkemv2.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "content_preview_inline" : "true",
+        "cursorPosition" : "75,23",
+        "scrollLine" : "68"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
