@@ -1,24 +1,4 @@
----
-title: "KKEMV II etapp venekeelne track"
-output: html_notebook
----
-
-```{r}
-tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/IIetapp_vene.csv",
-               header = F,
-               sep = ";",
-               encoding = "UTF-8",
-               dec = ".",
-               stringsAsFactors = F)
-```
-
-```{r}
-speakers = data.frame(tab[c(2:49),])
-names(speakers) = c(tab[c(1), ])
-```
-
-```{r}
-library(knitr)
+"0","library(knitr)
 
 judge_names = c(speakers$R1J1NAME, speakers$R1J2NAME, speakers$R1J3NAME,
               speakers$R2J1NAME, speakers$R2J2NAME, speakers$R2J3NAME,
@@ -40,8 +20,6 @@ diffs = aggregate(.~judge_names, diffs, mean)
 
 diffs = diffs[order(diffs$judge_scores...speaker_avg),]
 rownames(diffs) = c()
-names(diffs) = c("Kohtunik", "Erinevus", "Erinevus/Spiikrite SH")
+names(diffs) = c(\"Kohtunik\", \"Erinevus\", \"Erinevus/Spiikrite SH\")
 
-kable(diffs, caption = "Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest")
-```
-
+kable(diffs, caption = \"Kohtuniku keskmine kĆµrvalekalle kĆµneleja keskmistest spiikritest\")"

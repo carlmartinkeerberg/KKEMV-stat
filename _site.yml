@@ -4,8 +4,6 @@ navbar:
   left:
   - text: Avaleht
     href: index.html
-  - text: I etapp 2017/18
-    href: kkemv1.nb.html
   - text: II etapp 2017/18
     href: kkemv2.nb.html
   - text: II etapp 2017/18 venekeelne track

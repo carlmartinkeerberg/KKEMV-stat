@@ -66,17 +66,9 @@ plot(mean_speakers,
 ```{r}
 library(knitr)
 
-judge_names = c(speakers$R1J1NAME, speakers$R1J2NAME, speakers$R1J3NAME,
-              speakers$R2J1NAME, speakers$R2J2NAME, speakers$R2J3NAME,
-              speakers$R3J1NAME, speakers$R3J2NAME, speakers$R3J3NAME,
-              speakers$R4J1NAME, speakers$R4J2NAME, speakers$R4J3NAME,
-              speakers$R5J1NAME, speakers$R5J2NAME, speakers$R5J3NAME)
+judge_names = c(t(speakers[c(1:nrow(speakers)), 25:39]))
 
-judge_scores = as.numeric(c(speakers$R1J1, speakers$R1J2, speakers$R1J3,
-                            speakers$R2J1, speakers$R2J2, speakers$R2J3,
-                            speakers$R3J1, speakers$R3J2, speakers$R3J3,
-                            speakers$R4J1, speakers$R4J2, speakers$R4J3,
-                            speakers$R5J1, speakers$R5J2, speakers$R5J3))
+judge_scores = as.numeric(c(t(speakers[c(1:nrow(speakers)), c(10:24)])))
 
 speaker_avg = as.numeric(c(speakers$TOTALAVG))
 
