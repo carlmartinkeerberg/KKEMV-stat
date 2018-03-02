@@ -341,14 +341,14 @@ plot(mean_speakers,
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwianVkZ2VfbmFtZXMgPSBjKHQoc3BlYWtlcnNbYygxOm5yb3coc3BlYWtlcnMpKSwgMjU6MzldKSkiLCIiLCJqdWRnZV9zY29yZXMgPSBhcy5udW1lcmljKGModChzcGVha2Vyc1tjKDE6bnJvdyhzcGVha2VycykpLCBjKDEwOjI0KV0pKSkiLCIiLCJzcGVha2VyX2F2ZyA9IGFzLm51bWVyaWMoYyhzcGVha2VycyRUT1RBTEFWRykpIiwiIiwiZGlmZnMgPSBkYXRhLmZyYW1lKGp1ZGdlX25hbWVzLCBqdWRnZV9zY29yZXMgLSBzcGVha2VyX2F2ZywgKGp1ZGdlX3Njb3JlcyAtIHNwZWFrZXJfYXZnKS9zZChzcGVha2VyX2F2ZywgbmEucm0gPSBUKSkiLCIiLCJkaWZmcyA9IGFnZ3JlZ2F0ZSgufmp1ZGdlX25hbWVzLCBkaWZmcywgbWVhbikiLCIiLCJkaWZmcyA9IGRpZmZzW29yZGVyKGRpZmZzJGp1ZGdlX3Njb3Jlcy4uLnNwZWFrZXJfYXZnKSxdIiwicm93bmFtZXMoZGlmZnMpID0gYygpIiwibmFtZXMoZGlmZnMpID0gYyhcIktvaHR1bmlrXCIsIFwiRXJpbmV2dXNcIiwgXCJFcmluZXZ1cy9TcGlpa3JpdGUgU0hcIikiLCIiLCJrYWJsZShkaWZmcywgY2FwdGlvbiA9IFwiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0XCIpIl19 -->
+<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwianVkZ2VfbmFtZXMgPSB1bmxpc3Qoc3BlYWtlcnNbYygxOm5yb3coc3BlYWtlcnMpKSwgMjU6MzldKSIsIiIsImp1ZGdlX3Njb3JlcyA9IGFzLm51bWVyaWModW5saXN0KHNwZWFrZXJzW2MoMTpucm93KHNwZWFrZXJzKSksIGMoMTA6MjQpXSkpIiwiIiwic3BlYWtlcl9hdmcgPSAoYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRykpIiwiIiwiZGlmZnMgPSBkYXRhLmZyYW1lKGp1ZGdlX25hbWVzLCBqdWRnZV9zY29yZXMgLSBzcGVha2VyX2F2ZywgKGp1ZGdlX3Njb3JlcyAtIHNwZWFrZXJfYXZnKS9zZChzcGVha2VyX2F2ZywgbmEucm0gPSBUKSkiLCIiLCJkaWZmcyA9IGFnZ3JlZ2F0ZSgufmp1ZGdlX25hbWVzLCBkaWZmcywgbWVhbikiLCIiLCJkaWZmcyA9IGRpZmZzW29yZGVyKGRpZmZzJGp1ZGdlX3Njb3Jlcy4uLnNwZWFrZXJfYXZnKSxdIiwicm93bmFtZXMoZGlmZnMpID0gYygpIiwibmFtZXMoZGlmZnMpID0gYyhcIktvaHR1bmlrXCIsIFwiRXJpbmV2dXNcIiwgXCJFcmluZXZ1cy9TcGlpa3JpdGUgU0hcIikiLCIiLCJrYWJsZShkaWZmcywgY2FwdGlvbiA9IFwiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0XCIpIl19 -->
 <pre class="r"><code>library(knitr)
 
-judge_names = c(t(speakers[c(1:nrow(speakers)), 25:39]))
+judge_names = unlist(speakers[c(1:nrow(speakers)), 25:39])
 
-judge_scores = as.numeric(c(t(speakers[c(1:nrow(speakers)), c(10:24)])))
+judge_scores = as.numeric(unlist(speakers[c(1:nrow(speakers)), c(10:24)]))
 
-speaker_avg = as.numeric(c(speakers$TOTALAVG))
+speaker_avg = (as.numeric(speakers$TOTALAVG))
 
 diffs = data.frame(judge_names, judge_scores - speaker_avg, (judge_scores - speaker_avg)/sd(speaker_avg, na.rm = T))
 
@@ -371,104 +371,104 @@ kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmist
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Tiks (345)</td>
-<td align="right">-2.1833333</td>
-<td align="right">-1.1400938</td>
-</tr>
-<tr class="even">
 <td align="left">Tuule (234)</td>
-<td align="right">-1.7500000</td>
-<td align="right">-0.9138157</td>
-</tr>
-<tr class="odd">
-<td align="left">Rauno Kivimägi</td>
-<td align="right">-0.6575000</td>
-<td align="right">-0.3433336</td>
-</tr>
-<tr class="even">
-<td align="left">Andres Lestal</td>
-<td align="right">-0.6280000</td>
-<td align="right">-0.3279293</td>
-</tr>
-<tr class="odd">
-<td align="left">Erik</td>
-<td align="right">-0.5656522</td>
-<td align="right">-0.2953725</td>
-</tr>
-<tr class="even">
-<td align="left">Kaur (234)</td>
-<td align="right">-0.3805882</td>
-<td align="right">-0.1987357</td>
-</tr>
-<tr class="odd">
-<td align="left">Richard</td>
-<td align="right">-0.0560000</td>
-<td align="right">-0.0292421</td>
+<td align="right">-1.5423529</td>
+<td align="right">-0.8053865</td>
 </tr>
 <tr class="even">
 <td align="left">Heiki (45)</td>
-<td align="right">0.2962500</td>
-<td align="right">0.1546959</td>
+<td align="right">-0.7818182</td>
+<td align="right">-0.4082501</td>
 </tr>
 <tr class="odd">
-<td align="left">Küüsmaa</td>
-<td align="right">0.3003846</td>
-<td align="right">0.1568550</td>
-</tr>
-<tr class="even">
-<td align="left">Lauri</td>
-<td align="right">0.3724000</td>
-<td align="right">0.1944600</td>
-</tr>
-<tr class="odd">
-<td align="left">Ruul (135)</td>
-<td align="right">0.6063158</td>
-<td align="right">0.3166062</td>
-</tr>
-<tr class="even">
-<td align="left">Maria</td>
-<td align="right">0.7085185</td>
-<td align="right">0.3699745</td>
-</tr>
-<tr class="odd">
-<td align="left">Kristin (24)</td>
-<td align="right">0.8320000</td>
-<td align="right">0.4344541</td>
+<td align="left">Tiks (345)</td>
+<td align="right">-0.6161111</td>
+<td align="right">-0.3217211</td>
 </tr>
 <tr class="even">
 <td align="left">Kaspar (123)</td>
-<td align="right">0.8706667</td>
-<td align="right">0.4546451</td>
+<td align="right">-0.3258824</td>
+<td align="right">-0.1701694</td>
 </tr>
 <tr class="odd">
-<td align="left">Andreas Tulver</td>
-<td align="right">0.8833333</td>
-<td align="right">0.4612593</td>
+<td align="left">Maria</td>
+<td align="right">-0.2930000</td>
+<td align="right">-0.1529989</td>
+</tr>
+<tr class="even">
+<td align="left">Küüsmaa</td>
+<td align="right">-0.2903571</td>
+<td align="right">-0.1516188</td>
+</tr>
+<tr class="odd">
+<td align="left">Ruul (135)</td>
+<td align="right">-0.1486364</td>
+<td align="right">-0.0776150</td>
+</tr>
+<tr class="even">
+<td align="left">Erik</td>
+<td align="right">-0.1203333</td>
+<td align="right">-0.0628357</td>
+</tr>
+<tr class="odd">
+<td align="left">Rauno Kivimägi</td>
+<td align="right">-0.0847059</td>
+<td align="right">-0.0442318</td>
+</tr>
+<tr class="even">
+<td align="left">Lauri</td>
+<td align="right">-0.0503333</td>
+<td align="right">-0.0262831</td>
+</tr>
+<tr class="odd">
+<td align="left">Vlad (134)</td>
+<td align="right">0.0576471</td>
+<td align="right">0.0301022</td>
 </tr>
 <tr class="even">
 <td align="left">Doris Abe</td>
-<td align="right">1.0286957</td>
-<td align="right">0.5371647</td>
-</tr>
-<tr class="odd">
-<td align="left">Maarja</td>
-<td align="right">1.1534615</td>
-<td align="right">0.6023150</td>
-</tr>
-<tr class="even">
-<td align="left">Vlad (134)</td>
-<td align="right">1.7635714</td>
-<td align="right">0.9209024</td>
+<td align="right">0.1125000</td>
+<td align="right">0.0587453</td>
 </tr>
 <tr class="odd">
 <td align="left">Kätliin (123)</td>
-<td align="right">2.1892857</td>
-<td align="right">1.1432021</td>
+<td align="right">0.1937500</td>
+<td align="right">0.1011724</td>
 </tr>
 <tr class="even">
+<td align="left">Maarja</td>
+<td align="right">0.2227586</td>
+<td align="right">0.1163202</td>
+</tr>
+<tr class="odd">
+<td align="left">Andreas Tulver</td>
+<td align="right">0.2508333</td>
+<td align="right">0.1309802</td>
+</tr>
+<tr class="even">
+<td align="left">Richard</td>
+<td align="right">0.2666667</td>
+<td align="right">0.1392481</td>
+</tr>
+<tr class="odd">
+<td align="left">Kaur (234)</td>
+<td align="right">0.3316667</td>
+<td align="right">0.1731898</td>
+</tr>
+<tr class="even">
+<td align="left">Andres Lestal</td>
+<td align="right">1.0116667</td>
+<td align="right">0.5282725</td>
+</tr>
+<tr class="odd">
 <td align="left">Uku-Laur</td>
-<td align="right">3.1510526</td>
-<td align="right">1.6454179</td>
+<td align="right">1.2760870</td>
+<td align="right">0.6663476</td>
+</tr>
+<tr class="even">
+<td align="left">Kristin (24)</td>
+<td align="right">1.4233333</td>
+<td align="right">0.7432367</td>
 </tr>
 </tbody>
 </table>
@@ -501,7 +501,7 @@ abline(fit, lwd=2, col=&quot;blue&quot;)</code></pre>
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIktLRU1WIElJIGV0YXBwIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCmBgYHtyfQ0KdGFiID0gcmVhZC5jc3YoImh0dHBzOi8vZ2l0aHViLmNvbS9jYXJsbWFydGlua2VlcmJlcmcvS0tFTVYtc3RhdC9yYXcvbWFzdGVyL0lJZXRhcHAuY3N2IiwNCiAgICAgICAgICAgICAgIGhlYWRlciA9IEYsDQogICAgICAgICAgICAgICBzZXAgPSAiOyIsDQogICAgICAgICAgICAgICBlbmNvZGluZyA9ICJVVEYtOCIsDQogICAgICAgICAgICAgICBkZWMgPSAiLiIsDQogICAgICAgICAgICAgICBzdHJpbmdzQXNGYWN0b3JzID0gRikNCmBgYA0KDQpgYGB7cn0NCnNwZWFrZXJzID0gZGF0YS5mcmFtZSh0YWJbYygyOjYzKSxdKQ0KbmFtZXMoc3BlYWtlcnMpID0gYyh0YWJbYygxKSwgXSkNCmBgYA0KDQpgYGB7cn0NCnRlYW1zID0gZGF0YS5mcmFtZSh0YWJbYyg2NTo4MiksIGMoMToyNyldKQ0KbmFtZXModGVhbXMpID0gYyh0YWJbYyg2NCksIGMoMToyNyldKQ0KYGBgDQoNCmBgYHtyfQ0KanVkZ2VzID0gZGF0YS5mcmFtZSh0YWJbYyg4NDoxMDYpLCBjKDE6MjEpXSkNCm5hbWVzKGp1ZGdlcykgPSBjKHRhYltjKDgzKSwgYygxOjIxKV0pDQpgYGANCg0KYGBge3J9DQphbGx0b3RhbGF2ZyA9IG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRykpDQoNCm1lYW50b3RhbGF2ZyA9IG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFRPVEFMQVZHKSkpDQoNCmhpc3QoYWxsdG90YWxhdmcsDQogICAgIG1haW4gPSAiS2Vza21pc2VkIHNwaWlrcmlwdW5rdGlkIiwNCiAgICAgeGxhYiA9ICJQdW5rdGlkIiwNCiAgICAgeWxhYiA9ICJTYWdlZHVzIiwNCiAgICAgeGxpbSA9IGMoNjAsIDgwKSwNCiAgICAgYnJlYWtzID0gNikNCg0KYWJsaW5lKHYgPSBtZWFudG90YWxhdmcsDQogICAgICAgY29sID0gImJsdWUiLA0KICAgICAgIGx3ZCA9IDIuNSkNCg0KbGVnZW5kKDczLCAyMCwNCiAgICAgICBjKCJBcml0bSBrZXNrbWluZSIpLA0KICAgICAgIGx3ZCA9IGMoMi41KSwNCiAgICAgICBjb2wgPSBjKCJibHVlIikpDQpgYGANCg0KYGBge3J9DQptZWFuX3NwZWFrZXJzID0gYyhtZWFuKG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRSMUFWRykpKSwNCiAgICAgICAgICAgICAgICAgIG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFIyQVZHKSkpLA0KICAgICAgICAgICAgICAgICAgbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjNBVkcpKSksDQogICAgICAgICAgICAgICAgICBtZWFuKG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRSNEFWRykpKSwNCiAgICAgICAgICAgICAgICAgIG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFI1QVZHKSkpKQ0KDQpwbG90KG1lYW5fc3BlYWtlcnMsDQogICAgIG1haW4gPSAiS2Vza21pc2VkIHNwaWlrcmlwdW5rdGlkIGzDpGJpIHZvb3J1ZGUiLA0KICAgICB4bGFiID0gIlZvb3IiLA0KICAgICB5bGFiID0gIlB1bmt0ZSIsDQogICAgIHlsaW0gPSBjKDY4LCA3MiksDQogICAgIHR5cGUgPSAiYiIpDQpgYGANCg0KYGBge3J9DQpsaWJyYXJ5KGtuaXRyKQ0KDQpqdWRnZV9uYW1lcyA9IGModChzcGVha2Vyc1tjKDE6bnJvdyhzcGVha2VycykpLCAyNTozOV0pKQ0KDQpqdWRnZV9zY29yZXMgPSBhcy5udW1lcmljKGModChzcGVha2Vyc1tjKDE6bnJvdyhzcGVha2VycykpLCBjKDEwOjI0KV0pKSkNCg0Kc3BlYWtlcl9hdmcgPSBhcy5udW1lcmljKGMoc3BlYWtlcnMkVE9UQUxBVkcpKQ0KDQpkaWZmcyA9IGRhdGEuZnJhbWUoanVkZ2VfbmFtZXMsIGp1ZGdlX3Njb3JlcyAtIHNwZWFrZXJfYXZnLCAoanVkZ2Vfc2NvcmVzIC0gc3BlYWtlcl9hdmcpL3NkKHNwZWFrZXJfYXZnLCBuYS5ybSA9IFQpKQ0KDQpkaWZmcyA9IGFnZ3JlZ2F0ZSgufmp1ZGdlX25hbWVzLCBkaWZmcywgbWVhbikNCg0KZGlmZnMgPSBkaWZmc1tvcmRlcihkaWZmcyRqdWRnZV9zY29yZXMuLi5zcGVha2VyX2F2ZyksXQ0Kcm93bmFtZXMoZGlmZnMpID0gYygpDQpuYW1lcyhkaWZmcykgPSBjKCJLb2h0dW5payIsICJFcmluZXZ1cyIsICJFcmluZXZ1cy9TcGlpa3JpdGUgU0giKQ0KDQprYWJsZShkaWZmcywgY2FwdGlvbiA9ICJLb2h0dW5pa3Uga2Vza21pbmUga8O1cnZhbGVrYWxsZSBrw7VuZWxlamEga2Vza21pc3Rlc3Qgc3BpaWtyaXRlc3QiKQ0KYGBgDQoNCmBgYHtyfQ0KdGVhbV93aW5zX3NwZWFrcyA9IGRhdGEuZnJhbWUodGVhbXMkVEVBTSwgYXMubnVtZXJpYyh0ZWFtcyRUT1RBTCkpDQp0ZWFtX3dpbnNfc3BlYWtzID0gdGVhbV93aW5zX3NwZWFrc1tvcmRlcih0ZWFtX3dpbnNfc3BlYWtzJHRlYW1zLlRFQU0pLF0NCg0KdGVhbV9zcGVha3MgPSBkYXRhLmZyYW1lKHNwZWFrZXJzJFRFQU0sIGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpKQ0KbmFtZXModGVhbV9zcGVha3MpID0gYygidGVhbSIsICJzcGVha3MiKQ0KdGVhbV9zcGVha3MgPSBhZ2dyZWdhdGUoLn50ZWFtLCB0ZWFtX3NwZWFrcywgbWVhbikNCnRlYW1fc3BlYWtzID0gdGVhbV9zcGVha3Nbb3JkZXIodGVhbV9zcGVha3MkdGVhbSksXQ0KDQp0ZWFtX3dpbnNfc3BlYWtzJHNwZWFrcyA9IHRlYW1fc3BlYWtzJHNwZWFrcw0KDQpmaXQgPSBnbG0odGVhbV93aW5zX3NwZWFrcyRhcy5udW1lcmljLnRlYW1zLlRPVEFMLn50ZWFtX3dpbnNfc3BlYWtzJHNwZWFrcykNCg0KcGxvdCh0ZWFtX3dpbnNfc3BlYWtzJHNwZWFrcywgdGVhbV93aW5zX3NwZWFrcyRhcy5udW1lcmljLnRlYW1zLlRPVEFMLiwNCiAgICAgbWFpbiA9ICJUaWltaSB2w7VpdHVkZSBqYSB0aWltaSBrZXNrbWlzdGUgc3BpaWtyaXB1bmt0aWRlIHN1aGUiLA0KICAgICB4bGFiID0gIlNwaWlrcmlwdW5rdGUiLA0KICAgICB5bGFiID0gIlbDtWl0ZSIpDQoNCmFibGluZShmaXQsIGx3ZD0yLCBjb2w9ImJsdWUiKQ0KYGBg</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIktLRU1WIElJIGV0YXBwIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCmBgYHtyfQ0KdGFiID0gcmVhZC5jc3YoImh0dHBzOi8vZ2l0aHViLmNvbS9jYXJsbWFydGlua2VlcmJlcmcvS0tFTVYtc3RhdC9yYXcvbWFzdGVyL0lJZXRhcHAuY3N2IiwNCiAgICAgICAgICAgICAgIGhlYWRlciA9IEYsDQogICAgICAgICAgICAgICBzZXAgPSAiOyIsDQogICAgICAgICAgICAgICBlbmNvZGluZyA9ICJVVEYtOCIsDQogICAgICAgICAgICAgICBkZWMgPSAiLiIsDQogICAgICAgICAgICAgICBzdHJpbmdzQXNGYWN0b3JzID0gRikNCmBgYA0KDQpgYGB7cn0NCnNwZWFrZXJzID0gZGF0YS5mcmFtZSh0YWJbYygyOjYzKSxdKQ0KbmFtZXMoc3BlYWtlcnMpID0gYyh0YWJbYygxKSwgXSkNCmBgYA0KDQpgYGB7cn0NCnRlYW1zID0gZGF0YS5mcmFtZSh0YWJbYyg2NTo4MiksIGMoMToyNyldKQ0KbmFtZXModGVhbXMpID0gYyh0YWJbYyg2NCksIGMoMToyNyldKQ0KYGBgDQoNCmBgYHtyfQ0KanVkZ2VzID0gZGF0YS5mcmFtZSh0YWJbYyg4NDoxMDYpLCBjKDE6MjEpXSkNCm5hbWVzKGp1ZGdlcykgPSBjKHRhYltjKDgzKSwgYygxOjIxKV0pDQpgYGANCg0KYGBge3J9DQphbGx0b3RhbGF2ZyA9IG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRykpDQoNCm1lYW50b3RhbGF2ZyA9IG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFRPVEFMQVZHKSkpDQoNCmhpc3QoYWxsdG90YWxhdmcsDQogICAgIG1haW4gPSAiS2Vza21pc2VkIHNwaWlrcmlwdW5rdGlkIiwNCiAgICAgeGxhYiA9ICJQdW5rdGlkIiwNCiAgICAgeWxhYiA9ICJTYWdlZHVzIiwNCiAgICAgeGxpbSA9IGMoNjAsIDgwKSwNCiAgICAgYnJlYWtzID0gNikNCg0KYWJsaW5lKHYgPSBtZWFudG90YWxhdmcsDQogICAgICAgY29sID0gImJsdWUiLA0KICAgICAgIGx3ZCA9IDIuNSkNCg0KbGVnZW5kKDczLCAyMCwNCiAgICAgICBjKCJBcml0bSBrZXNrbWluZSIpLA0KICAgICAgIGx3ZCA9IGMoMi41KSwNCiAgICAgICBjb2wgPSBjKCJibHVlIikpDQpgYGANCg0KYGBge3J9DQptZWFuX3NwZWFrZXJzID0gYyhtZWFuKG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRSMUFWRykpKSwNCiAgICAgICAgICAgICAgICAgIG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFIyQVZHKSkpLA0KICAgICAgICAgICAgICAgICAgbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjNBVkcpKSksDQogICAgICAgICAgICAgICAgICBtZWFuKG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRSNEFWRykpKSwNCiAgICAgICAgICAgICAgICAgIG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFI1QVZHKSkpKQ0KDQpwbG90KG1lYW5fc3BlYWtlcnMsDQogICAgIG1haW4gPSAiS2Vza21pc2VkIHNwaWlrcmlwdW5rdGlkIGzDpGJpIHZvb3J1ZGUiLA0KICAgICB4bGFiID0gIlZvb3IiLA0KICAgICB5bGFiID0gIlB1bmt0ZSIsDQogICAgIHlsaW0gPSBjKDY4LCA3MiksDQogICAgIHR5cGUgPSAiYiIpDQpgYGANCg0KYGBge3J9DQpsaWJyYXJ5KGtuaXRyKQ0KDQpqdWRnZV9uYW1lcyA9IHVubGlzdChzcGVha2Vyc1tjKDE6bnJvdyhzcGVha2VycykpLCAyNTozOV0pDQoNCmp1ZGdlX3Njb3JlcyA9IGFzLm51bWVyaWModW5saXN0KHNwZWFrZXJzW2MoMTpucm93KHNwZWFrZXJzKSksIGMoMTA6MjQpXSkpDQoNCnNwZWFrZXJfYXZnID0gKGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpKQ0KDQpkaWZmcyA9IGRhdGEuZnJhbWUoanVkZ2VfbmFtZXMsIGp1ZGdlX3Njb3JlcyAtIHNwZWFrZXJfYXZnLCAoanVkZ2Vfc2NvcmVzIC0gc3BlYWtlcl9hdmcpL3NkKHNwZWFrZXJfYXZnLCBuYS5ybSA9IFQpKQ0KDQpkaWZmcyA9IGFnZ3JlZ2F0ZSgufmp1ZGdlX25hbWVzLCBkaWZmcywgbWVhbikNCg0KZGlmZnMgPSBkaWZmc1tvcmRlcihkaWZmcyRqdWRnZV9zY29yZXMuLi5zcGVha2VyX2F2ZyksXQ0Kcm93bmFtZXMoZGlmZnMpID0gYygpDQpuYW1lcyhkaWZmcykgPSBjKCJLb2h0dW5payIsICJFcmluZXZ1cyIsICJFcmluZXZ1cy9TcGlpa3JpdGUgU0giKQ0KDQprYWJsZShkaWZmcywgY2FwdGlvbiA9ICJLb2h0dW5pa3Uga2Vza21pbmUga8O1cnZhbGVrYWxsZSBrw7VuZWxlamEga2Vza21pc3Rlc3Qgc3BpaWtyaXRlc3QiKQ0KYGBgDQoNCmBgYHtyfQ0KdGVhbV93aW5zX3NwZWFrcyA9IGRhdGEuZnJhbWUodGVhbXMkVEVBTSwgYXMubnVtZXJpYyh0ZWFtcyRUT1RBTCkpDQp0ZWFtX3dpbnNfc3BlYWtzID0gdGVhbV93aW5zX3NwZWFrc1tvcmRlcih0ZWFtX3dpbnNfc3BlYWtzJHRlYW1zLlRFQU0pLF0NCg0KdGVhbV9zcGVha3MgPSBkYXRhLmZyYW1lKHNwZWFrZXJzJFRFQU0sIGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpKQ0KbmFtZXModGVhbV9zcGVha3MpID0gYygidGVhbSIsICJzcGVha3MiKQ0KdGVhbV9zcGVha3MgPSBhZ2dyZWdhdGUoLn50ZWFtLCB0ZWFtX3NwZWFrcywgbWVhbikNCnRlYW1fc3BlYWtzID0gdGVhbV9zcGVha3Nbb3JkZXIodGVhbV9zcGVha3MkdGVhbSksXQ0KDQp0ZWFtX3dpbnNfc3BlYWtzJHNwZWFrcyA9IHRlYW1fc3BlYWtzJHNwZWFrcw0KDQpmaXQgPSBnbG0odGVhbV93aW5zX3NwZWFrcyRhcy5udW1lcmljLnRlYW1zLlRPVEFMLn50ZWFtX3dpbnNfc3BlYWtzJHNwZWFrcykNCg0KcGxvdCh0ZWFtX3dpbnNfc3BlYWtzJHNwZWFrcywgdGVhbV93aW5zX3NwZWFrcyRhcy5udW1lcmljLnRlYW1zLlRPVEFMLiwNCiAgICAgbWFpbiA9ICJUaWltaSB2w7VpdHVkZSBqYSB0aWltaSBrZXNrbWlzdGUgc3BpaWtyaXB1bmt0aWRlIHN1aGUiLA0KICAgICB4bGFiID0gIlNwaWlrcmlwdW5rdGUiLA0KICAgICB5bGFiID0gIlbDtWl0ZSIpDQoNCmFibGluZShmaXQsIGx3ZD0yLCBjb2w9ImJsdWUiKQ0KYGBg</div>
 
 
 

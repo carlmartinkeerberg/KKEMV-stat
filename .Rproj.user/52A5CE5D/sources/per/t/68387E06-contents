@@ -20,11 +20,11 @@ names(speakers) = c(tab[c(1), ])
 ```{r}
 library(knitr)
 
-judge_names = c(t(speakers[c(1:nrow(speakers)), 25:39]))
+judge_names = unlist(speakers[c(1:nrow(speakers)), 25:39])
 
-judge_scores = as.numeric(c(t(speakers[c(1:nrow(speakers)), c(10:24)])))
+judge_scores = as.numeric(unlist(speakers[c(1:nrow(speakers)), c(10:24)]))
 
-speaker_avg = as.numeric(c(speakers$TOTALAVG))
+speaker_avg = (as.numeric(speakers$TOTALAVG))
 
 diffs = data.frame(judge_names, judge_scores - speaker_avg, (judge_scores - speaker_avg)/sd(speaker_avg, na.rm = T))
 

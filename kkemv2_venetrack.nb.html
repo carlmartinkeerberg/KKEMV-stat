@@ -276,14 +276,14 @@ names(speakers) = c(tab[c(1), ])</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwianVkZ2VfbmFtZXMgPSBjKHQoc3BlYWtlcnNbYygxOm5yb3coc3BlYWtlcnMpKSwgMjU6MzldKSkiLCIiLCJqdWRnZV9zY29yZXMgPSBhcy5udW1lcmljKGModChzcGVha2Vyc1tjKDE6bnJvdyhzcGVha2VycykpLCBjKDEwOjI0KV0pKSkiLCIiLCJzcGVha2VyX2F2ZyA9IGFzLm51bWVyaWMoYyhzcGVha2VycyRUT1RBTEFWRykpIiwiIiwiZGlmZnMgPSBkYXRhLmZyYW1lKGp1ZGdlX25hbWVzLCBqdWRnZV9zY29yZXMgLSBzcGVha2VyX2F2ZywgKGp1ZGdlX3Njb3JlcyAtIHNwZWFrZXJfYXZnKS9zZChzcGVha2VyX2F2ZywgbmEucm0gPSBUKSkiLCIiLCJkaWZmcyA9IGFnZ3JlZ2F0ZSgufmp1ZGdlX25hbWVzLCBkaWZmcywgbWVhbikiLCIiLCJkaWZmcyA9IGRpZmZzW29yZGVyKGRpZmZzJGp1ZGdlX3Njb3Jlcy4uLnNwZWFrZXJfYXZnKSxdIiwicm93bmFtZXMoZGlmZnMpID0gYygpIiwibmFtZXMoZGlmZnMpID0gYyhcIktvaHR1bmlrXCIsIFwiRXJpbmV2dXNcIiwgXCJFcmluZXZ1cy9TcGlpa3JpdGUgU0hcIikiLCIiLCJrYWJsZShkaWZmcywgY2FwdGlvbiA9IFwiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0XCIpIl19 -->
+<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwianVkZ2VfbmFtZXMgPSB1bmxpc3Qoc3BlYWtlcnNbYygxOm5yb3coc3BlYWtlcnMpKSwgMjU6MzldKSIsIiIsImp1ZGdlX3Njb3JlcyA9IGFzLm51bWVyaWModW5saXN0KHNwZWFrZXJzW2MoMTpucm93KHNwZWFrZXJzKSksIGMoMTA6MjQpXSkpIiwiIiwic3BlYWtlcl9hdmcgPSAoYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRykpIiwiIiwiZGlmZnMgPSBkYXRhLmZyYW1lKGp1ZGdlX25hbWVzLCBqdWRnZV9zY29yZXMgLSBzcGVha2VyX2F2ZywgKGp1ZGdlX3Njb3JlcyAtIHNwZWFrZXJfYXZnKS9zZChzcGVha2VyX2F2ZywgbmEucm0gPSBUKSkiLCIiLCJkaWZmcyA9IGFnZ3JlZ2F0ZSgufmp1ZGdlX25hbWVzLCBkaWZmcywgbWVhbikiLCIiLCJkaWZmcyA9IGRpZmZzW29yZGVyKGRpZmZzJGp1ZGdlX3Njb3Jlcy4uLnNwZWFrZXJfYXZnKSxdIiwicm93bmFtZXMoZGlmZnMpID0gYygpIiwibmFtZXMoZGlmZnMpID0gYyhcIktvaHR1bmlrXCIsIFwiRXJpbmV2dXNcIiwgXCJFcmluZXZ1cy9TcGlpa3JpdGUgU0hcIikiLCIiLCJrYWJsZShkaWZmcywgY2FwdGlvbiA9IFwiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0XCIpIl19 -->
 <pre class="r"><code>library(knitr)
 
-judge_names = c(t(speakers[c(1:nrow(speakers)), 25:39]))
+judge_names = unlist(speakers[c(1:nrow(speakers)), 25:39])
 
-judge_scores = as.numeric(c(t(speakers[c(1:nrow(speakers)), c(10:24)])))
+judge_scores = as.numeric(unlist(speakers[c(1:nrow(speakers)), c(10:24)]))
 
-speaker_avg = as.numeric(c(speakers$TOTALAVG))
+speaker_avg = (as.numeric(speakers$TOTALAVG))
 
 diffs = data.frame(judge_names, judge_scores - speaker_avg, (judge_scores - speaker_avg)/sd(speaker_avg, na.rm = T))
 
@@ -306,54 +306,54 @@ kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmist
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Leonid</td>
-<td align="right">-3.8133333</td>
-<td align="right">-1.4431961</td>
+<td align="left">Vlad (25)</td>
+<td align="right">-2.0166667</td>
+<td align="right">-0.7632287</td>
 </tr>
 <tr class="even">
-<td align="left">Polina</td>
-<td align="right">-2.9310345</td>
-<td align="right">-1.1092808</td>
+<td align="left">Leonid</td>
+<td align="right">-1.7366667</td>
+<td align="right">-0.6572598</td>
 </tr>
 <tr class="odd">
 <td align="left">Andrei</td>
-<td align="right">-0.5652174</td>
-<td align="right">-0.2139125</td>
+<td align="right">-0.9478261</td>
+<td align="right">-0.3587148</td>
 </tr>
 <tr class="even">
+<td align="left">Polina</td>
+<td align="right">-0.7413793</td>
+<td align="right">-0.2805828</td>
+</tr>
+<tr class="odd">
 <td align="left">Viktoria</td>
-<td align="right">0.1130435</td>
-<td align="right">0.0427825</td>
-</tr>
-<tr class="odd">
-<td align="left">Jana</td>
-<td align="right">0.5500000</td>
-<td align="right">0.2081533</td>
+<td align="right">-0.1391304</td>
+<td align="right">-0.0526554</td>
 </tr>
 <tr class="even">
-<td align="left">Vlad (25)</td>
-<td align="right">1.0333333</td>
-<td align="right">0.3910759</td>
-</tr>
-<tr class="odd">
 <td align="left">Vladimir</td>
-<td align="right">1.3066667</td>
-<td align="right">0.4945217</td>
+<td align="right">0.3066667</td>
+<td align="right">0.1160612</td>
+</tr>
+<tr class="odd">
+<td align="left">Pjotr</td>
+<td align="right">0.3666667</td>
+<td align="right">0.1387689</td>
 </tr>
 <tr class="even">
-<td align="left">Pjotr</td>
-<td align="right">1.8733333</td>
-<td align="right">0.7089827</td>
+<td align="left">Jana</td>
+<td align="right">1.4333333</td>
+<td align="right">0.5424601</td>
 </tr>
 <tr class="odd">
 <td align="left">Ilja</td>
-<td align="right">2.9913043</td>
-<td align="right">1.1320906</td>
+<td align="right">1.6347826</td>
+<td align="right">0.6187007</td>
 </tr>
 <tr class="even">
 <td align="left">Sergei</td>
-<td align="right">4.1304348</td>
-<td align="right">1.5632065</td>
+<td align="right">2.0782609</td>
+<td align="right">0.7865397</td>
 </tr>
 </tbody>
 </table>
@@ -361,7 +361,7 @@ kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmist
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIktLRU1WIElJIGV0YXBwIHZlbmVrZWVsbmUgdHJhY2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCnRhYiA9IHJlYWQuY3N2KCJodHRwczovL2dpdGh1Yi5jb20vY2FybG1hcnRpbmtlZXJiZXJnL0tLRU1WLXN0YXQvcmF3L21hc3Rlci9JSWV0YXBwX3ZlbmUuY3N2IiwNCiAgICAgICAgICAgICAgIGhlYWRlciA9IEYsDQogICAgICAgICAgICAgICBzZXAgPSAiOyIsDQogICAgICAgICAgICAgICBlbmNvZGluZyA9ICJVVEYtOCIsDQogICAgICAgICAgICAgICBkZWMgPSAiLiIsDQogICAgICAgICAgICAgICBzdHJpbmdzQXNGYWN0b3JzID0gRikNCmBgYA0KDQpgYGB7cn0NCnNwZWFrZXJzID0gZGF0YS5mcmFtZSh0YWJbYygyOjQ5KSxdKQ0KbmFtZXMoc3BlYWtlcnMpID0gYyh0YWJbYygxKSwgXSkNCmBgYA0KDQpgYGB7cn0NCmxpYnJhcnkoa25pdHIpDQoNCmp1ZGdlX25hbWVzID0gYyh0KHNwZWFrZXJzW2MoMTpucm93KHNwZWFrZXJzKSksIDI1OjM5XSkpDQoNCmp1ZGdlX3Njb3JlcyA9IGFzLm51bWVyaWMoYyh0KHNwZWFrZXJzW2MoMTpucm93KHNwZWFrZXJzKSksIGMoMTA6MjQpXSkpKQ0KDQpzcGVha2VyX2F2ZyA9IGFzLm51bWVyaWMoYyhzcGVha2VycyRUT1RBTEFWRykpDQoNCmRpZmZzID0gZGF0YS5mcmFtZShqdWRnZV9uYW1lcywganVkZ2Vfc2NvcmVzIC0gc3BlYWtlcl9hdmcsIChqdWRnZV9zY29yZXMgLSBzcGVha2VyX2F2Zykvc2Qoc3BlYWtlcl9hdmcsIG5hLnJtID0gVCkpDQoNCmRpZmZzID0gYWdncmVnYXRlKC5+anVkZ2VfbmFtZXMsIGRpZmZzLCBtZWFuKQ0KDQpkaWZmcyA9IGRpZmZzW29yZGVyKGRpZmZzJGp1ZGdlX3Njb3Jlcy4uLnNwZWFrZXJfYXZnKSxdDQpyb3duYW1lcyhkaWZmcykgPSBjKCkNCm5hbWVzKGRpZmZzKSA9IGMoIktvaHR1bmlrIiwgIkVyaW5ldnVzIiwgIkVyaW5ldnVzL1NwaWlrcml0ZSBTSCIpDQoNCmthYmxlKGRpZmZzLCBjYXB0aW9uID0gIktvaHR1bmlrdSBrZXNrbWluZSBrw7VydmFsZWthbGxlIGvDtW5lbGVqYSBrZXNrbWlzdGVzdCBzcGlpa3JpdGVzdCIpDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIktLRU1WIElJIGV0YXBwIHZlbmVrZWVsbmUgdHJhY2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCnRhYiA9IHJlYWQuY3N2KCJodHRwczovL2dpdGh1Yi5jb20vY2FybG1hcnRpbmtlZXJiZXJnL0tLRU1WLXN0YXQvcmF3L21hc3Rlci9JSWV0YXBwX3ZlbmUuY3N2IiwNCiAgICAgICAgICAgICAgIGhlYWRlciA9IEYsDQogICAgICAgICAgICAgICBzZXAgPSAiOyIsDQogICAgICAgICAgICAgICBlbmNvZGluZyA9ICJVVEYtOCIsDQogICAgICAgICAgICAgICBkZWMgPSAiLiIsDQogICAgICAgICAgICAgICBzdHJpbmdzQXNGYWN0b3JzID0gRikNCmBgYA0KDQpgYGB7cn0NCnNwZWFrZXJzID0gZGF0YS5mcmFtZSh0YWJbYygyOjQ5KSxdKQ0KbmFtZXMoc3BlYWtlcnMpID0gYyh0YWJbYygxKSwgXSkNCmBgYA0KDQpgYGB7cn0NCmxpYnJhcnkoa25pdHIpDQoNCmp1ZGdlX25hbWVzID0gdW5saXN0KHNwZWFrZXJzW2MoMTpucm93KHNwZWFrZXJzKSksIDI1OjM5XSkNCg0KanVkZ2Vfc2NvcmVzID0gYXMubnVtZXJpYyh1bmxpc3Qoc3BlYWtlcnNbYygxOm5yb3coc3BlYWtlcnMpKSwgYygxMDoyNCldKSkNCg0Kc3BlYWtlcl9hdmcgPSAoYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRykpDQoNCmRpZmZzID0gZGF0YS5mcmFtZShqdWRnZV9uYW1lcywganVkZ2Vfc2NvcmVzIC0gc3BlYWtlcl9hdmcsIChqdWRnZV9zY29yZXMgLSBzcGVha2VyX2F2Zykvc2Qoc3BlYWtlcl9hdmcsIG5hLnJtID0gVCkpDQoNCmRpZmZzID0gYWdncmVnYXRlKC5+anVkZ2VfbmFtZXMsIGRpZmZzLCBtZWFuKQ0KDQpkaWZmcyA9IGRpZmZzW29yZGVyKGRpZmZzJGp1ZGdlX3Njb3Jlcy4uLnNwZWFrZXJfYXZnKSxdDQpyb3duYW1lcyhkaWZmcykgPSBjKCkNCm5hbWVzKGRpZmZzKSA9IGMoIktvaHR1bmlrIiwgIkVyaW5ldnVzIiwgIkVyaW5ldnVzL1NwaWlrcml0ZSBTSCIpDQoNCmthYmxlKGRpZmZzLCBjYXB0aW9uID0gIktvaHR1bmlrdSBrZXNrbWluZSBrw7VydmFsZWthbGxlIGvDtW5lbGVqYSBrZXNrbWlzdGVzdCBzcGlpa3JpdGVzdCIpDQpgYGANCg0K</div>
 
 
 
