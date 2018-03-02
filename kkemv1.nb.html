@@ -257,6 +257,8 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
+<div id="ps-vigane-tab-kohtunike-osas" class="section level2">
+<h2>PS! Vigane TAB kohtunike osas</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoidGFiID0gcmVhZC5jc3YoXCJodHRwczovL2dpdGh1Yi5jb20vY2FybG1hcnRpbmtlZXJiZXJnL0tLRU1WLXN0YXQvcmF3L21hc3Rlci9JZXRhcHAuY3N2XCIsXG4gICAgICAgICAgICAgICBoZWFkZXIgPSBGLFxuICAgICAgICAgICAgICAgc2VwID0gXCI7XCIsXG4gICAgICAgICAgICAgICBlbmNvZGluZyA9IFwiVVRGLThcIixcbiAgICAgICAgICAgICAgIGRlYyA9IFwiLlwiLFxuICAgICAgICAgICAgICAgc3RyaW5nc0FzRmFjdG9ycyA9IEYpIn0= -->
@@ -338,14 +340,12 @@ legend(73, 20,
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbInIxX21zID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjFBVkcpKSkiLCJyMl9tcyA9IG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFIyQVZHKSkpIiwicjNfbXMgPSBtZWFuKG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRSM0FWRykpKSIsInI0X21zID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjRBVkcpKSkiLCJyNV9tcyA9IG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFI1QVZHKSkpIiwiIiwibWVhbl9zcGVha2VycyA9IGMocjFfbXMsIHIyX21zLCByM19tcywgcjRfbXMsIHI1X21zKSIsIiIsInBsb3QobWVhbl9zcGVha2VycyxcbiAgICAgbWFpbiA9IFwiS2Vza21pc2VkIHNwaWlrcmlwdW5rdGlkIGzDpGJpIHZvb3J1ZGVcIixcbiAgICAgeGxhYiA9IFwiVm9vclwiLFxuICAgICB5bGFiID0gXCJQdW5rdGVcIixcbiAgICAgeWxpbSA9IGMoNjgsIDcyKSxcbiAgICAgdHlwZSA9IFwiYlwiKSJdfQ== -->
-<pre class="r"><code>r1_ms = mean(na.omit(as.numeric(speakers$R1AVG)))
-r2_ms = mean(na.omit(as.numeric(speakers$R2AVG)))
-r3_ms = mean(na.omit(as.numeric(speakers$R3AVG)))
-r4_ms = mean(na.omit(as.numeric(speakers$R4AVG)))
-r5_ms = mean(na.omit(as.numeric(speakers$R5AVG)))
-
-mean_speakers = c(r1_ms, r2_ms, r3_ms, r4_ms, r5_ms)
+<!-- rnb-source-begin eyJkYXRhIjpbIm1lYW5fc3BlYWtlcnMgPSBjKG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFIxQVZHKSkpLFxuICAgICAgICAgICAgICAgICAgbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjJBVkcpKSksXG4gICAgICAgICAgICAgICAgICBtZWFuKG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRSM0FWRykpKSxcbiAgICAgICAgICAgICAgICAgIG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFI0QVZHKSkpLFxuICAgICAgICAgICAgICAgICAgbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjVBVkcpKSkpIiwiIiwicGxvdChtZWFuX3NwZWFrZXJzLFxuICAgICBtYWluID0gXCJLZXNrbWlzZWQgc3BpaWtyaXB1bmt0aWQgbMOkYmkgdm9vcnVkZVwiLFxuICAgICB4bGFiID0gXCJWb29yXCIsXG4gICAgIHlsYWIgPSBcIlB1bmt0ZVwiLFxuICAgICB5bGltID0gYyg2OCwgNzIpLFxuICAgICB0eXBlID0gXCJiXCIpIl19 -->
+<pre class="r"><code>mean_speakers = c(mean(na.omit(as.numeric(speakers$R1AVG))),
+                  mean(na.omit(as.numeric(speakers$R2AVG))),
+                  mean(na.omit(as.numeric(speakers$R3AVG))),
+                  mean(na.omit(as.numeric(speakers$R4AVG))),
+                  mean(na.omit(as.numeric(speakers$R5AVG))))
 
 plot(mean_speakers,
      main = &quot;Keskmised spiikripunktid läbi voorude&quot;,
@@ -361,29 +361,30 @@ plot(mean_speakers,
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwiZm9yIChyIGluIDE6NSl7XG4gIGV2YWwocGFyc2UodGV4dD1wYXN0ZShcImtpbmRuZXNzX1wiLCByLCBcIj1kYXRhLmZyYW1lKGFzLm51bWVyaWMoc3BlYWtlcnMkUlwiLCByLCBcIkoxKS0gYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRyksIHNwZWFrZXJzJFJcIiwgciwgXCJKMU5BTUUpXCIsIHNlcD1cIlwiKSkpXG4gIGRpZmY9XCJkaWZmXCJcbiAgbmFtZT1cIm5hbWVcIlxuICBldmFsKHBhcnNlKHRleHQ9cGFzdGUoXCJuYW1lcyhraW5kbmVzc19cIiwgciwgXCIpPWMoXCIsIGRpZmYsIFwiLFwiLCBuYW1lLCBcIilcIiwgc2VwPVwiXCIpKSlcbn0iLCIiLCJkaWZmcyA9IFJlZHVjZShmdW5jdGlvbih4LCB5KSBtZXJnZSh4LCB5LCBhbGw9VFJVRSksIGxpc3Qoa2luZG5lc3NfMSwga2luZG5lc3NfMiwga2luZG5lc3NfMywga2luZG5lc3NfNCwga2luZG5lc3NfNSkpIiwiIiwiZGlmZnMgPSBhZ2dyZWdhdGUoLn5uYW1lLCBkaWZmcywgbWVhbikiLCIiLCJuYW1lcyhkaWZmcykgPSBjKFwiS29odHVuaWtcIiwgXCJFcmluZXZ1c1wiKSIsIiIsImRpZmZzID0gZGlmZnNbb3JkZXIoZGlmZnMkRXJpbmV2dXMpLF0iLCIiLCJyb3duYW1lcyhkaWZmcykgPSBjKCkiLCIiLCJzcGVha2VyX3NkID0gc2QoYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRyksIG5hLnJtPVQpIiwiIiwiZGlmZnMkZGlmZl9kaXZfc2QgPSBkaWZmcyRFcmluZXZ1cy9zcGVha2VyX3NkIiwiIiwia2FibGUoZGlmZnMsIGNhcHRpb24gPSBcIktvaHR1bmlrdSBrZXNrbWluZSBrw7VydmFsZWthbGxlIGvDtW5lbGVqYSBrZXNrbWlzdGVzdCBzcGlpa3JpdGVzdFwiKSJdfQ== -->
+<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoa25pdHIpIiwiIiwianVkZ2VfbmFtZXMgPSBjKHNwZWFrZXJzJFIxSjFOQU1FLCBzcGVha2VycyRSMUoyTkFNRSwgc3BlYWtlcnMkUjFKM05BTUUsXG4gICAgICAgICAgICAgIHNwZWFrZXJzJFIySjFOQU1FLCBzcGVha2VycyRSMkoyTkFNRSwgc3BlYWtlcnMkUjJKM05BTUUsXG4gICAgICAgICAgICAgIHNwZWFrZXJzJFIzSjFOQU1FLCBzcGVha2VycyRSM0oyTkFNRSwgc3BlYWtlcnMkUjNKM05BTUUsXG4gICAgICAgICAgICAgIHNwZWFrZXJzJFI0SjFOQU1FLCBzcGVha2VycyRSNEoyTkFNRSwgc3BlYWtlcnMkUjRKM05BTUUsXG4gICAgICAgICAgICAgIHNwZWFrZXJzJFI1SjFOQU1FLCBzcGVha2VycyRSNUoyTkFNRSwgc3BlYWtlcnMkUjVKM05BTUUpIiwiIiwianVkZ2Vfc2NvcmVzID0gYXMubnVtZXJpYyhjKHNwZWFrZXJzJFIxSjEsIHNwZWFrZXJzJFIxSjIsIHNwZWFrZXJzJFIxSjMsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc3BlYWtlcnMkUjJKMSwgc3BlYWtlcnMkUjJKMiwgc3BlYWtlcnMkUjJKMyxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzcGVha2VycyRSM0oxLCBzcGVha2VycyRSM0oyLCBzcGVha2VycyRSM0ozLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNwZWFrZXJzJFI0SjEsIHNwZWFrZXJzJFI0SjIsIHNwZWFrZXJzJFI0SjMsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc3BlYWtlcnMkUjVKMSwgc3BlYWtlcnMkUjVKMiwgc3BlYWtlcnMkUjVKMykpIiwiIiwic3BlYWtlcl9hdmcgPSBhcy5udW1lcmljKGMoc3BlYWtlcnMkVE9UQUxBVkcpKSIsIiIsImRpZmZzID0gZGF0YS5mcmFtZShqdWRnZV9uYW1lcywganVkZ2Vfc2NvcmVzIC0gc3BlYWtlcl9hdmcsIChqdWRnZV9zY29yZXMgLSBzcGVha2VyX2F2Zykvc2Qoc3BlYWtlcl9hdmcsIG5hLnJtID0gVCkpIiwiIiwiZGlmZnMgPSBhZ2dyZWdhdGUoLn5qdWRnZV9uYW1lcywgZGlmZnMsIG1lYW4pIiwiIiwiZGlmZnMgPSBkaWZmc1tvcmRlcihkaWZmcyRqdWRnZV9zY29yZXMuLi5zcGVha2VyX2F2ZyksXSIsInJvd25hbWVzKGRpZmZzKSA9IGMoKSIsIm5hbWVzKGRpZmZzKSA9IGMoXCJLb2h0dW5pa1wiLCBcIkVyaW5ldnVzXCIsIFwiRXJpbmV2dXMvU3BpaWtyaXRlIFNIXCIpIiwiIiwia2FibGUoZGlmZnMsIGNhcHRpb24gPSBcIktvaHR1bmlrdSBrZXNrbWluZSBrw7VydmFsZWthbGxlIGvDtW5lbGVqYSBrZXNrbWlzdGVzdCBzcGlpa3JpdGVzdFwiKSJdfQ== -->
 <pre class="r"><code>library(knitr)
 
-for (r in 1:5){
-  eval(parse(text=paste(&quot;kindness_&quot;, r, &quot;=data.frame(as.numeric(speakers$R&quot;, r, &quot;J1)- as.numeric(speakers$TOTALAVG), speakers$R&quot;, r, &quot;J1NAME)&quot;, sep=&quot;&quot;)))
-  diff=&quot;diff&quot;
-  name=&quot;name&quot;
-  eval(parse(text=paste(&quot;names(kindness_&quot;, r, &quot;)=c(&quot;, diff, &quot;,&quot;, name, &quot;)&quot;, sep=&quot;&quot;)))
-}
+judge_names = c(speakers$R1J1NAME, speakers$R1J2NAME, speakers$R1J3NAME,
+              speakers$R2J1NAME, speakers$R2J2NAME, speakers$R2J3NAME,
+              speakers$R3J1NAME, speakers$R3J2NAME, speakers$R3J3NAME,
+              speakers$R4J1NAME, speakers$R4J2NAME, speakers$R4J3NAME,
+              speakers$R5J1NAME, speakers$R5J2NAME, speakers$R5J3NAME)
 
-diffs = Reduce(function(x, y) merge(x, y, all=TRUE), list(kindness_1, kindness_2, kindness_3, kindness_4, kindness_5))
+judge_scores = as.numeric(c(speakers$R1J1, speakers$R1J2, speakers$R1J3,
+                            speakers$R2J1, speakers$R2J2, speakers$R2J3,
+                            speakers$R3J1, speakers$R3J2, speakers$R3J3,
+                            speakers$R4J1, speakers$R4J2, speakers$R4J3,
+                            speakers$R5J1, speakers$R5J2, speakers$R5J3))
 
-diffs = aggregate(.~name, diffs, mean)
+speaker_avg = as.numeric(c(speakers$TOTALAVG))
 
-names(diffs) = c(&quot;Kohtunik&quot;, &quot;Erinevus&quot;)
+diffs = data.frame(judge_names, judge_scores - speaker_avg, (judge_scores - speaker_avg)/sd(speaker_avg, na.rm = T))
 
-diffs = diffs[order(diffs$Erinevus),]
+diffs = aggregate(.~judge_names, diffs, mean)
 
+diffs = diffs[order(diffs$judge_scores...speaker_avg),]
 rownames(diffs) = c()
-
-speaker_sd = sd(as.numeric(speakers$TOTALAVG), na.rm=T)
-
-diffs$diff_div_sd = diffs$Erinevus/speaker_sd
+names(diffs) = c(&quot;Kohtunik&quot;, &quot;Erinevus&quot;, &quot;Erinevus/Spiikrite SH&quot;)
 
 kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest&quot;)</code></pre>
 <!-- rnb-source-end -->
@@ -393,59 +394,59 @@ kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmist
 <tr class="header">
 <th align="left">Kohtunik</th>
 <th align="right">Erinevus</th>
-<th align="right">diff_div_sd</th>
+<th align="right">Erinevus/Spiikrite SH</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Karin Kase</td>
-<td align="right">-1.3732000</td>
-<td align="right">-0.5094965</td>
+<td align="right">-1.4872414</td>
+<td align="right">-0.5518092</td>
 </tr>
 <tr class="even">
 <td align="left">Karl Martin Jaup</td>
-<td align="right">-0.7875000</td>
-<td align="right">-0.2921851</td>
+<td align="right">-0.7706897</td>
+<td align="right">-0.2859479</td>
 </tr>
 <tr class="odd">
 <td align="left">Tõnis Kuusk</td>
-<td align="right">-0.5931818</td>
-<td align="right">-0.2200874</td>
+<td align="right">-0.7683333</td>
+<td align="right">-0.2850737</td>
 </tr>
 <tr class="even">
 <td align="left">Siim Ruul</td>
-<td align="right">-0.5500000</td>
-<td align="right">-0.2040658</td>
+<td align="right">-0.6666667</td>
+<td align="right">-0.2473524</td>
 </tr>
 <tr class="odd">
 <td align="left">Herman Kelomees</td>
-<td align="right">-0.4608333</td>
-<td align="right">-0.1709824</td>
+<td align="right">-0.5220000</td>
+<td align="right">-0.1936770</td>
 </tr>
 <tr class="even">
 <td align="left">Maria Kull</td>
-<td align="right">-0.3340000</td>
-<td align="right">-0.1239236</td>
+<td align="right">-0.2741379</td>
+<td align="right">-0.1017130</td>
 </tr>
 <tr class="odd">
-<td align="left">Carl-Martin Keerberg</td>
-<td align="right">-0.2250000</td>
-<td align="right">-0.0834814</td>
+<td align="left">Triin Toimetaja</td>
+<td align="right">-0.1200000</td>
+<td align="right">-0.0445234</td>
 </tr>
 <tr class="even">
-<td align="left">Triin Toimetaja</td>
-<td align="right">-0.1052632</td>
-<td align="right">-0.0390556</td>
+<td align="left">Carl-Martin Keerberg</td>
+<td align="right">-0.0250000</td>
+<td align="right">-0.0092757</td>
 </tr>
 <tr class="odd">
 <td align="left">Anneliis Rea</td>
-<td align="right">0.1552000</td>
-<td align="right">0.0575836</td>
+<td align="right">0.0626667</td>
+<td align="right">0.0232511</td>
 </tr>
 <tr class="even">
 <td align="left">Maarja Pild</td>
-<td align="right">0.2900000</td>
-<td align="right">0.1075983</td>
+<td align="right">0.1333333</td>
+<td align="right">0.0494705</td>
 </tr>
 <tr class="odd">
 <td align="left">Kristin Parts</td>
@@ -454,39 +455,40 @@ kable(diffs, caption = &quot;Kohtuniku keskmine kõrvalekalle kõneleja keskmist
 </tr>
 <tr class="even">
 <td align="left">Lauri Leas</td>
-<td align="right">0.3980000</td>
-<td align="right">0.1476694</td>
+<td align="right">0.3650000</td>
+<td align="right">0.1354255</td>
 </tr>
 <tr class="odd">
-<td align="left">Martin Küüsmaa</td>
-<td align="right">0.6812500</td>
-<td align="right">0.2527633</td>
+<td align="left">Erik Haamer</td>
+<td align="right">0.6803448</td>
+<td align="right">0.2524274</td>
 </tr>
 <tr class="even">
-<td align="left">Erik Haamer</td>
-<td align="right">0.7865000</td>
-<td align="right">0.2918140</td>
+<td align="left">Martin Küüsmaa</td>
+<td align="right">0.7183333</td>
+<td align="right">0.2665222</td>
 </tr>
 <tr class="odd">
 <td align="left">Maarja Tambet</td>
-<td align="right">0.8457895</td>
-<td align="right">0.3138121</td>
+<td align="right">0.8525000</td>
+<td align="right">0.3163019</td>
 </tr>
 <tr class="even">
 <td align="left">Helery Maidlas</td>
-<td align="right">1.0900000</td>
-<td align="right">0.4044212</td>
+<td align="right">1.1660870</td>
+<td align="right">0.4326517</td>
 </tr>
 <tr class="odd">
 <td align="left">Rynaldo</td>
-<td align="right">1.3272727</td>
-<td align="right">0.4924562</td>
+<td align="right">1.4166667</td>
+<td align="right">0.5256239</td>
 </tr>
 </tbody>
 </table>
 <!-- rnb-chunk-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIktLRU1WIEkgZXRhcHAiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KYGBge3J9DQp0YWIgPSByZWFkLmNzdigiaHR0cHM6Ly9naXRodWIuY29tL2NhcmxtYXJ0aW5rZWVyYmVyZy9LS0VNVi1zdGF0L3Jhdy9tYXN0ZXIvSWV0YXBwLmNzdiIsDQogICAgICAgICAgICAgICBoZWFkZXIgPSBGLA0KICAgICAgICAgICAgICAgc2VwID0gIjsiLA0KICAgICAgICAgICAgICAgZW5jb2RpbmcgPSAiVVRGLTgiLA0KICAgICAgICAgICAgICAgZGVjID0gIi4iLA0KICAgICAgICAgICAgICAgc3RyaW5nc0FzRmFjdG9ycyA9IEYpDQpgYGANCg0KYGBge3J9DQpzcGVha2VycyA9IGRhdGEuZnJhbWUodGFiW2MoMjo5NCksXSkNCm5hbWVzKHNwZWFrZXJzKSA9IGModGFiW2MoMSksIF0pDQpgYGANCg0KYGBge3J9DQp0ZWFtcyA9IGRhdGEuZnJhbWUodGFiW2MoOTY6MTI1KSwgYygxOjI3KV0pDQpuYW1lcyh0ZWFtcykgPSBjKHRhYltjKDk1KSwgYygxOjI3KV0pDQpgYGANCg0KYGBge3J9DQpqdWRnZXMgPSBkYXRhLmZyYW1lKHRhYltjKDEyNzoxNDMpLCBjKDE6MjEpXSkNCm5hbWVzKGp1ZGdlcykgPSBjKHRhYltjKDEyNiksIGMoMToyMSldKQ0KYGBgDQoNCmBgYHtyfQ0KdG90YWxzcGVha2VycyA9IG5hLm9taXQoZGF0YS5mcmFtZShzcGVha2VycyRTUEVBS0VSLCBhcy5udW1lcmljKHNwZWFrZXJzJFRPVEFMQVZHKSkpDQoNCmJlc3RzcGVha2VyID0gdG90YWxzcGVha2Vyc1t3aGljaC5tYXgodG90YWxzcGVha2VycyRhcy5udW1lcmljLnNwZWFrZXJzLlRPVEFMQVZHLiksXQ0KDQpwcmludChiZXN0c3BlYWtlcikNCmBgYA0KDQpgYGB7cn0NCmFsbHRvdGFsYXZnID0gbmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFRPVEFMQVZHKSkNCg0KbWVhbnRvdGFsYXZnID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpKSkNCg0KaGlzdChhbGx0b3RhbGF2ZywNCiAgICAgbWFpbiA9ICJLZXNrbWlzZWQgc3BpaWtyaXB1bmt0aWQiLA0KICAgICB4bGFiID0gIlB1bmt0aWQiLA0KICAgICB5bGFiID0gIlNhZ2VkdXMiLA0KICAgICB4bGltID0gYyg2MCwgODApLA0KICAgICBicmVha3MgPSA2KQ0KDQphYmxpbmUodiA9IG1lYW50b3RhbGF2ZywNCiAgICAgICBjb2wgPSAiYmx1ZSIsDQogICAgICAgbHdkID0gMi41KQ0KDQpsZWdlbmQoNzMsIDIwLA0KICAgICAgIGMoIkFyaXRtIGtlc2ttaW5lIiksDQogICAgICAgbHdkID0gYygyLjUpLA0KICAgICAgIGNvbCA9IGMoImJsdWUiKSkNCmBgYA0KDQpgYGB7cn0NCnIxX21zID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjFBVkcpKSkNCnIyX21zID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjJBVkcpKSkNCnIzX21zID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjNBVkcpKSkNCnI0X21zID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjRBVkcpKSkNCnI1X21zID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjVBVkcpKSkNCg0KbWVhbl9zcGVha2VycyA9IGMocjFfbXMsIHIyX21zLCByM19tcywgcjRfbXMsIHI1X21zKQ0KDQpwbG90KG1lYW5fc3BlYWtlcnMsDQogICAgIG1haW4gPSAiS2Vza21pc2VkIHNwaWlrcmlwdW5rdGlkIGzDpGJpIHZvb3J1ZGUiLA0KICAgICB4bGFiID0gIlZvb3IiLA0KICAgICB5bGFiID0gIlB1bmt0ZSIsDQogICAgIHlsaW0gPSBjKDY4LCA3MiksDQogICAgIHR5cGUgPSAiYiIpDQpgYGANCg0KYGBge3J9DQpsaWJyYXJ5KGtuaXRyKQ0KDQpmb3IgKHIgaW4gMTo1KXsNCiAgZXZhbChwYXJzZSh0ZXh0PXBhc3RlKCJraW5kbmVzc18iLCByLCAiPWRhdGEuZnJhbWUoYXMubnVtZXJpYyhzcGVha2VycyRSIiwgciwgIkoxKS0gYXMubnVtZXJpYyhzcGVha2VycyRUT1RBTEFWRyksIHNwZWFrZXJzJFIiLCByLCAiSjFOQU1FKSIsIHNlcD0iIikpKQ0KICBkaWZmPSJkaWZmIg0KICBuYW1lPSJuYW1lIg0KICBldmFsKHBhcnNlKHRleHQ9cGFzdGUoIm5hbWVzKGtpbmRuZXNzXyIsIHIsICIpPWMoIiwgZGlmZiwgIiwiLCBuYW1lLCAiKSIsIHNlcD0iIikpKQ0KfQ0KDQpkaWZmcyA9IFJlZHVjZShmdW5jdGlvbih4LCB5KSBtZXJnZSh4LCB5LCBhbGw9VFJVRSksIGxpc3Qoa2luZG5lc3NfMSwga2luZG5lc3NfMiwga2luZG5lc3NfMywga2luZG5lc3NfNCwga2luZG5lc3NfNSkpDQoNCmRpZmZzID0gYWdncmVnYXRlKC5+bmFtZSwgZGlmZnMsIG1lYW4pDQoNCm5hbWVzKGRpZmZzKSA9IGMoIktvaHR1bmlrIiwgIkVyaW5ldnVzIikNCg0KZGlmZnMgPSBkaWZmc1tvcmRlcihkaWZmcyRFcmluZXZ1cyksXQ0KDQpyb3duYW1lcyhkaWZmcykgPSBjKCkNCg0Kc3BlYWtlcl9zZCA9IHNkKGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpLCBuYS5ybT1UKQ0KDQpkaWZmcyRkaWZmX2Rpdl9zZCA9IGRpZmZzJEVyaW5ldnVzL3NwZWFrZXJfc2QNCg0Ka2FibGUoZGlmZnMsIGNhcHRpb24gPSAiS29odHVuaWt1IGtlc2ttaW5lIGvDtXJ2YWxla2FsbGUga8O1bmVsZWphIGtlc2ttaXN0ZXN0IHNwaWlrcml0ZXN0IikNCmBgYA==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIktLRU1WIEkgZXRhcHAiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KIyNQUyEgVmlnYW5lIFRBQiBrb2h0dW5pa2Ugb3Nhcw0KYGBge3J9DQp0YWIgPSByZWFkLmNzdigiaHR0cHM6Ly9naXRodWIuY29tL2NhcmxtYXJ0aW5rZWVyYmVyZy9LS0VNVi1zdGF0L3Jhdy9tYXN0ZXIvSWV0YXBwLmNzdiIsDQogICAgICAgICAgICAgICBoZWFkZXIgPSBGLA0KICAgICAgICAgICAgICAgc2VwID0gIjsiLA0KICAgICAgICAgICAgICAgZW5jb2RpbmcgPSAiVVRGLTgiLA0KICAgICAgICAgICAgICAgZGVjID0gIi4iLA0KICAgICAgICAgICAgICAgc3RyaW5nc0FzRmFjdG9ycyA9IEYpDQpgYGANCg0KYGBge3J9DQpzcGVha2VycyA9IGRhdGEuZnJhbWUodGFiW2MoMjo5NCksXSkNCm5hbWVzKHNwZWFrZXJzKSA9IGModGFiW2MoMSksIF0pDQpgYGANCg0KYGBge3J9DQp0ZWFtcyA9IGRhdGEuZnJhbWUodGFiW2MoOTY6MTI1KSwgYygxOjI3KV0pDQpuYW1lcyh0ZWFtcykgPSBjKHRhYltjKDk1KSwgYygxOjI3KV0pDQpgYGANCg0KYGBge3J9DQpqdWRnZXMgPSBkYXRhLmZyYW1lKHRhYltjKDEyNzoxNDMpLCBjKDE6MjEpXSkNCm5hbWVzKGp1ZGdlcykgPSBjKHRhYltjKDEyNiksIGMoMToyMSldKQ0KYGBgDQoNCmBgYHtyfQ0KdG90YWxzcGVha2VycyA9IG5hLm9taXQoZGF0YS5mcmFtZShzcGVha2VycyRTUEVBS0VSLCBhcy5udW1lcmljKHNwZWFrZXJzJFRPVEFMQVZHKSkpDQoNCmJlc3RzcGVha2VyID0gdG90YWxzcGVha2Vyc1t3aGljaC5tYXgodG90YWxzcGVha2VycyRhcy5udW1lcmljLnNwZWFrZXJzLlRPVEFMQVZHLiksXQ0KDQpwcmludChiZXN0c3BlYWtlcikNCmBgYA0KDQpgYGB7cn0NCmFsbHRvdGFsYXZnID0gbmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFRPVEFMQVZHKSkNCg0KbWVhbnRvdGFsYXZnID0gbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkVE9UQUxBVkcpKSkNCg0KaGlzdChhbGx0b3RhbGF2ZywNCiAgICAgbWFpbiA9ICJLZXNrbWlzZWQgc3BpaWtyaXB1bmt0aWQiLA0KICAgICB4bGFiID0gIlB1bmt0aWQiLA0KICAgICB5bGFiID0gIlNhZ2VkdXMiLA0KICAgICB4bGltID0gYyg2MCwgODApLA0KICAgICBicmVha3MgPSA2KQ0KDQphYmxpbmUodiA9IG1lYW50b3RhbGF2ZywNCiAgICAgICBjb2wgPSAiYmx1ZSIsDQogICAgICAgbHdkID0gMi41KQ0KDQpsZWdlbmQoNzMsIDIwLA0KICAgICAgIGMoIkFyaXRtIGtlc2ttaW5lIiksDQogICAgICAgbHdkID0gYygyLjUpLA0KICAgICAgIGNvbCA9IGMoImJsdWUiKSkNCmBgYA0KDQpgYGB7cn0NCm1lYW5fc3BlYWtlcnMgPSBjKG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFIxQVZHKSkpLA0KICAgICAgICAgICAgICAgICAgbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjJBVkcpKSksDQogICAgICAgICAgICAgICAgICBtZWFuKG5hLm9taXQoYXMubnVtZXJpYyhzcGVha2VycyRSM0FWRykpKSwNCiAgICAgICAgICAgICAgICAgIG1lYW4obmEub21pdChhcy5udW1lcmljKHNwZWFrZXJzJFI0QVZHKSkpLA0KICAgICAgICAgICAgICAgICAgbWVhbihuYS5vbWl0KGFzLm51bWVyaWMoc3BlYWtlcnMkUjVBVkcpKSkpDQoNCnBsb3QobWVhbl9zcGVha2VycywNCiAgICAgbWFpbiA9ICJLZXNrbWlzZWQgc3BpaWtyaXB1bmt0aWQgbMOkYmkgdm9vcnVkZSIsDQogICAgIHhsYWIgPSAiVm9vciIsDQogICAgIHlsYWIgPSAiUHVua3RlIiwNCiAgICAgeWxpbSA9IGMoNjgsIDcyKSwNCiAgICAgdHlwZSA9ICJiIikNCmBgYA0KDQpgYGB7cn0NCmxpYnJhcnkoa25pdHIpDQoNCmp1ZGdlX25hbWVzID0gYyhzcGVha2VycyRSMUoxTkFNRSwgc3BlYWtlcnMkUjFKMk5BTUUsIHNwZWFrZXJzJFIxSjNOQU1FLA0KICAgICAgICAgICAgICBzcGVha2VycyRSMkoxTkFNRSwgc3BlYWtlcnMkUjJKMk5BTUUsIHNwZWFrZXJzJFIySjNOQU1FLA0KICAgICAgICAgICAgICBzcGVha2VycyRSM0oxTkFNRSwgc3BlYWtlcnMkUjNKMk5BTUUsIHNwZWFrZXJzJFIzSjNOQU1FLA0KICAgICAgICAgICAgICBzcGVha2VycyRSNEoxTkFNRSwgc3BlYWtlcnMkUjRKMk5BTUUsIHNwZWFrZXJzJFI0SjNOQU1FLA0KICAgICAgICAgICAgICBzcGVha2VycyRSNUoxTkFNRSwgc3BlYWtlcnMkUjVKMk5BTUUsIHNwZWFrZXJzJFI1SjNOQU1FKQ0KDQpqdWRnZV9zY29yZXMgPSBhcy5udW1lcmljKGMoc3BlYWtlcnMkUjFKMSwgc3BlYWtlcnMkUjFKMiwgc3BlYWtlcnMkUjFKMywNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzcGVha2VycyRSMkoxLCBzcGVha2VycyRSMkoyLCBzcGVha2VycyRSMkozLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNwZWFrZXJzJFIzSjEsIHNwZWFrZXJzJFIzSjIsIHNwZWFrZXJzJFIzSjMsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgc3BlYWtlcnMkUjRKMSwgc3BlYWtlcnMkUjRKMiwgc3BlYWtlcnMkUjRKMywNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzcGVha2VycyRSNUoxLCBzcGVha2VycyRSNUoyLCBzcGVha2VycyRSNUozKSkNCg0Kc3BlYWtlcl9hdmcgPSBhcy5udW1lcmljKGMoc3BlYWtlcnMkVE9UQUxBVkcpKQ0KDQpkaWZmcyA9IGRhdGEuZnJhbWUoanVkZ2VfbmFtZXMsIGp1ZGdlX3Njb3JlcyAtIHNwZWFrZXJfYXZnLCAoanVkZ2Vfc2NvcmVzIC0gc3BlYWtlcl9hdmcpL3NkKHNwZWFrZXJfYXZnLCBuYS5ybSA9IFQpKQ0KDQpkaWZmcyA9IGFnZ3JlZ2F0ZSgufmp1ZGdlX25hbWVzLCBkaWZmcywgbWVhbikNCg0KZGlmZnMgPSBkaWZmc1tvcmRlcihkaWZmcyRqdWRnZV9zY29yZXMuLi5zcGVha2VyX2F2ZyksXQ0Kcm93bmFtZXMoZGlmZnMpID0gYygpDQpuYW1lcyhkaWZmcykgPSBjKCJLb2h0dW5payIsICJFcmluZXZ1cyIsICJFcmluZXZ1cy9TcGlpa3JpdGUgU0giKQ0KDQprYWJsZShkaWZmcywgY2FwdGlvbiA9ICJLb2h0dW5pa3Uga2Vza21pbmUga8O1cnZhbGVrYWxsZSBrw7VuZWxlamEga2Vza21pc3Rlc3Qgc3BpaWtyaXRlc3QiKQ0KYGBg</div>
 
 
 

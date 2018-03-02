@@ -1,0 +1,2 @@
+"0","teams = data.frame(tab[c(96:125), c(1:27)])"
+"0","names(teams) = c(tab[c(95), c(1:27)])"
