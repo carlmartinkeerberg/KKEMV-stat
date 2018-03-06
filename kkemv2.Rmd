@@ -4,41 +4,45 @@ output: html_notebook
 ---
 ```{r}
 tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/IIetapp.csv",
-               header = F,
                sep = ";",
+               stringsAsFactors = F,
+               header = F,
                encoding = "UTF-8",
-               dec = ".",
-               stringsAsFactors = F)
+               na.strings = "")
+header = tab[2, c(1:ncol(tab)-1)]
+tab = tab[c(3:nrow(tab)), c(1:ncol(tab)-1)]
+names(tab) = header
 ```
 
 ```{r}
-speakers = data.frame(tab[c(2:63),])
-names(speakers) = c(tab[c(1), ])
+library(knitr)
+
+r1_mean = rowMeans(data.matrix(tab[, c(3:5)]), na.rm = T)
+r2_mean = rowMeans(data.matrix(tab[, c(6:8)]), na.rm = T)
+r3_mean = rowMeans(data.matrix(tab[, c(9:11)]), na.rm = T)
+r4_mean = rowMeans(data.matrix(tab[, c(12:14)]), na.rm = T)
+r5_mean = rowMeans(data.matrix(tab[, c(15:17)]), na.rm = T)
+total_mean = rowMeans(data.frame(r1_mean, r2_mean, r3_mean, r4_mean, r5_mean), na.rm = T)
+
+diffs = data.frame(unlist(tab[, c(18:32)]), as.numeric(unlist(tab[, 3:17])) - total_mean)
+names(diffs) = c("Kohtunik", "Erinevus")
+
+diffs = aggregate(.~Kohtunik, diffs, mean)
+diffs = diffs[order(diffs$Erinevus),]
+rownames(diffs) = c()
+
+kable(diffs, digits = 2)
 ```
 
 ```{r}
-teams = data.frame(tab[c(65:82), c(1:27)])
-names(teams) = c(tab[c(64), c(1:27)])
-```
-
-```{r}
-judges = data.frame(tab[c(84:106), c(1:21)])
-names(judges) = c(tab[c(83), c(1:21)])
-```
-
-```{r}
-alltotalavg = na.omit(as.numeric(speakers$TOTALAVG))
-
-meantotalavg = mean(na.omit(as.numeric(speakers$TOTALAVG)))
-
-hist(alltotalavg,
+hist(total_mean,
      main = "Keskmised spiikripunktid",
      xlab = "Punktid",
      ylab = "Sagedus",
      xlim = c(60, 80),
      breaks = 6)
 
-abline(v = meantotalavg,
+abline(v = mean(total_mean),
        col = "blue",
        lwd = 2.5)
 
@@ -49,57 +53,10 @@ legend(73, 20,
 ```
 
 ```{r}
-mean_speakers = c(mean(na.omit(as.numeric(speakers$R1AVG))),
-                  mean(na.omit(as.numeric(speakers$R2AVG))),
-                  mean(na.omit(as.numeric(speakers$R3AVG))),
-                  mean(na.omit(as.numeric(speakers$R4AVG))),
-                  mean(na.omit(as.numeric(speakers$R5AVG))))
-
-plot(mean_speakers,
+plot(c(mean(r1_mean, na.rm = T), mean(r2_mean, na.rm = T), mean(r3_mean, na.rm = T), mean(r4_mean, na.rm = T), mean(r5_mean, na.rm = T)),
      main = "Keskmised spiikripunktid läbi voorude",
      xlab = "Voor",
      ylab = "Punkte",
      ylim = c(68, 72),
      type = "b")
-```
-
-```{r}
-library(knitr)
-
-judge_names = unlist(speakers[c(1:nrow(speakers)), 25:39])
-
-judge_scores = as.numeric(unlist(speakers[c(1:nrow(speakers)), c(10:24)]))
-
-speaker_avg = (as.numeric(speakers$TOTALAVG))
-
-diffs = data.frame(judge_names, judge_scores - speaker_avg, (judge_scores - speaker_avg)/sd(speaker_avg, na.rm = T))
-
-diffs = aggregate(.~judge_names, diffs, mean)
-
-diffs = diffs[order(diffs$judge_scores...speaker_avg),]
-rownames(diffs) = c()
-names(diffs) = c("Kohtunik", "Erinevus", "Erinevus/Spiikrite SH")
-
-kable(diffs, caption = "Kohtuniku keskmine kõrvalekalle kõneleja keskmistest spiikritest")
-```
-
-```{r}
-team_wins_speaks = data.frame(teams$TEAM, as.numeric(teams$TOTAL))
-team_wins_speaks = team_wins_speaks[order(team_wins_speaks$teams.TEAM),]
-
-team_speaks = data.frame(speakers$TEAM, as.numeric(speakers$TOTALAVG))
-names(team_speaks) = c("team", "speaks")
-team_speaks = aggregate(.~team, team_speaks, mean)
-team_speaks = team_speaks[order(team_speaks$team),]
-
-team_wins_speaks$speaks = team_speaks$speaks
-
-fit = glm(team_wins_speaks$as.numeric.teams.TOTAL.~team_wins_speaks$speaks)
-
-plot(team_wins_speaks$speaks, team_wins_speaks$as.numeric.teams.TOTAL.,
-     main = "Tiimi võitude ja tiimi keskmiste spiikripunktide suhe",
-     xlab = "Spiikripunkte",
-     ylab = "Võite")
-
-abline(fit, lwd=2, col="blue")
 ```
