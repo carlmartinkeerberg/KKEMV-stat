@@ -1,0 +1,3 @@
+"0","abline(lm(team_speaks$total_mean~wins),"
+"0","       col = ""blue"","
+"0","       lwd =2)"

@@ -61,3 +61,4 @@ plot(c(mean(r1_mean, na.rm = T), mean(r2_mean, na.rm = T), mean(r3_mean, na.rm =
      ylim = c(66, 70),
      type = "b")
 ```
+

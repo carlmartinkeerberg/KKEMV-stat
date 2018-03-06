@@ -1,10 +1,9 @@
 ---
-title: "KKEMV II etapp venekeelne"
+title: "KKEMV II etapp"
 output: html_notebook
 ---
-
 ```{r}
-tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/tabs/IIetapp_vene.csv",
+tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/tabs/IIetapp.csv",
                sep = ";",
                stringsAsFactors = F,
                header = F,
@@ -58,6 +57,33 @@ plot(c(mean(r1_mean, na.rm = T), mean(r2_mean, na.rm = T), mean(r3_mean, na.rm =
      main = "Keskmised spiikripunktid läbi voorude",
      xlab = "Voor",
      ylab = "Punkte",
-     ylim = c(66, 70),
+     ylim = c(68, 72),
      type = "b")
+```
+
+```{r}
+ballots = tab[, c(2, 33:47)]
+
+r1_ballots = rowSums(data.matrix(ballots[, c(2:4)]), na.rm = T)
+r2_ballots = rowSums(data.matrix(ballots[, c(5:7)]), na.rm = T)
+r3_ballots = rowSums(data.matrix(ballots[, c(8:10)]), na.rm = T)
+r4_ballots = rowSums(data.matrix(ballots[, c(11:13)]), na.rm = T)
+r5_ballots = rowSums(data.matrix(ballots[, c(14:16)]), na.rm = T)
+
+ballots = data.frame(ballots$Team, r1_ballots %/% 2, r2_ballots %/% 2, r3_ballots %/% 2, r4_ballots %/% 2, r5_ballots %/% 2)
+ballots = aggregate(.~ballots.Team, ballots, mean)
+
+wins = rowSums(ballots[, -1], na.rm = T)
+
+team_speaks = data.frame(tab$Speaker, tab$Team, total_mean)
+team_speaks = aggregate(.~tab.Team, team_speaks, mean)[, -2]
+
+plot(wins, team_speaks$total_mean,
+     main = "Tiimi võitude ja keskmiste spiikripunktide suhe",
+     xlab = "Võidud",
+     ylab = "Spiikripunktid")
+
+abline(lm(team_speaks$total_mean~wins),
+       col = "blue",
+       lwd =2)
 ```
