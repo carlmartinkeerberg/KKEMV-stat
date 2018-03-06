@@ -6,6 +6,8 @@ navbar:
     href: index.html
   - text: II etapp 2017/18
     href: kkemv2.nb.html
+  - text: II etapp 2017/18 venekeelne
+    href: kkemv2_vene.nb.html
 output_dir: .
 output:
   html_document:
