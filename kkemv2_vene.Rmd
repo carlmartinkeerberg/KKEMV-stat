@@ -43,7 +43,7 @@ hist(total_mean,
      xlim = c(60, 80),
      breaks = 6)
 
-abline(v = mean(total_mean),
+abline(v = mean(total_mean, na.rm = T),
        col = "blue",
        lwd = 2.5)
 
