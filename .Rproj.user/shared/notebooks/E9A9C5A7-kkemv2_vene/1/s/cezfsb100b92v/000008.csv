@@ -1,6 +1,0 @@
-"0","hist(total_mean,"
-"0","     main = ""Keskmised spiikripunktid"","
-"0","     xlab = ""Punktid"","
-"0","     ylab = ""Sagedus"","
-"0","     xlim = c(60, 80),"
-"0","     breaks = 6)"

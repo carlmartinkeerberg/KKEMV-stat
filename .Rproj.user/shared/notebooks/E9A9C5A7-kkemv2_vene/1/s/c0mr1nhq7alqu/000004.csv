@@ -1,6 +1,0 @@
-"0","plot(c(mean(r1_mean, na.rm = T), mean(r2_mean, na.rm = T), mean(r3_mean, na.rm = T), mean(r4_mean, na.rm = T), mean(r5_mean, na.rm = T)),"
-"0","     main = ""Keskmised spiikripunktid läbi voorude"","
-"0","     xlab = ""Voor"","
-"0","     ylab = ""Punkte"","
-"0","     ylim = c(66, 70),"
-"0","     type = ""b"")"
