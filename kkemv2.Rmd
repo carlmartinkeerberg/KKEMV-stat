@@ -1,6 +1,7 @@
 ---
 title: "KKEMV II etapp"
-output: html_notebook
+output:
+  html_document:
 ---
 ```{r}
 tab = read.csv("https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/tabs/IIetapp.csv",
