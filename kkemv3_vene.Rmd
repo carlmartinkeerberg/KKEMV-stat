@@ -1,10 +1,10 @@
 ---
-title: "KKEMV III etapp"
+title: "KKEMV III etapp venekeelne"
 output: html_notebook
 ---
 
 ```{r}
-tab = read.csv("https://raw.githubusercontent.com/carlmartinkeerberg/KKEMV-stat/master/tabs/IIIetapp.csv",
+tab = read.csv("https://raw.githubusercontent.com/carlmartinkeerberg/KKEMV-stat/master/tabs/IIIetapp_vene.csv",
                sep = ";",
                stringsAsFactors = F,
                header = F,
@@ -40,7 +40,7 @@ hist(total_mean,
      main = "Keskmised spiikripunktid",
      xlab = "Punktid",
      ylab = "Sagedus",
-     xlim = c(60, 80),
+     xlim = c(62, 72),
      breaks = 6)
 
 abline(v = mean(total_mean, na.rm = T),
@@ -58,7 +58,7 @@ plot(c(mean(r1_mean, na.rm = T), mean(r2_mean, na.rm = T), mean(r3_mean, na.rm =
      main = "Keskmised spiikripunktid läbi voorude",
      xlab = "Voor",
      ylab = "Punkte",
-     ylim = c(67, 71),
+     ylim = c(65, 69),
      type = "b")
 ```
 

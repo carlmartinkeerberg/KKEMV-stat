@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>KKEMV II etapp</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">KKEMV Statistika</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Avaleht</a>
+</li>
+<li>
+  <a href="kkemv2.nb.html">II etapp 2017/18</a>
+</li>
+<li>
+  <a href="kkemv2_vene.nb.html">II etapp 2017/18 venekeelne</a>
+</li>
+<li>
+  <a href="kkemv3.nb.html">III etapp 2017/18</a>
+</li>
+<li>
+  <a href="kkemv3_vene.nb.html">III etapp 2017/18 venekeelne</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">KKEMV II etapp</h1>
+
+</div>
+
+
+<pre class="r"><code>tab = read.csv(&quot;https://github.com/carlmartinkeerberg/KKEMV-stat/raw/master/tabs/IIetapp.csv&quot;,
+               sep = &quot;;&quot;,
+               stringsAsFactors = F,
+               header = F,
+               encoding = &quot;UTF-8&quot;,
+               na.strings = &quot;&quot;)
+header = tab[2, c(1:ncol(tab)-1)]
+tab = tab[c(3:nrow(tab)), c(1:ncol(tab)-1)]
+names(tab) = header</code></pre>
+<pre class="r"><code>library(knitr)
+
+r1_mean = rowMeans(data.matrix(tab[, c(3:5)]), na.rm = T)
+r2_mean = rowMeans(data.matrix(tab[, c(6:8)]), na.rm = T)
+r3_mean = rowMeans(data.matrix(tab[, c(9:11)]), na.rm = T)
+r4_mean = rowMeans(data.matrix(tab[, c(12:14)]), na.rm = T)
+r5_mean = rowMeans(data.matrix(tab[, c(15:17)]), na.rm = T)
+total_mean = rowMeans(data.frame(r1_mean, r2_mean, r3_mean, r4_mean, r5_mean), na.rm = T)
+
+diffs = data.frame(unlist(tab[, c(18:32)]), as.numeric(unlist(tab[, 3:17])) - total_mean)
+names(diffs) = c(&quot;Kohtunik&quot;, &quot;Erinevus&quot;)
+
+diffs = aggregate(.~Kohtunik, diffs, mean)
+diffs = diffs[order(diffs$Erinevus),]
+rownames(diffs) = c()
+
+kable(diffs, digits = 2)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Kohtunik</th>
+<th align="right">Erinevus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Tuule (234)</td>
+<td align="right">-1.54</td>
+</tr>
+<tr class="even">
+<td align="left">Heiki (45)</td>
+<td align="right">-0.78</td>
+</tr>
+<tr class="odd">
+<td align="left">Tiks (345)</td>
+<td align="right">-0.61</td>
+</tr>
+<tr class="even">
+<td align="left">Kaspar (123)</td>
+<td align="right">-0.33</td>
+</tr>
+<tr class="odd">
+<td align="left">Maria</td>
+<td align="right">-0.29</td>
+</tr>
+<tr class="even">
+<td align="left">Küüsmaa</td>
+<td align="right">-0.29</td>
+</tr>
+<tr class="odd">
+<td align="left">Ruul (135)</td>
+<td align="right">-0.15</td>
+</tr>
+<tr class="even">
+<td align="left">Erik</td>
+<td align="right">-0.12</td>
+</tr>
+<tr class="odd">
+<td align="left">Rauno Kivimägi</td>
+<td align="right">-0.08</td>
+</tr>
+<tr class="even">
+<td align="left">Lauri</td>
+<td align="right">-0.05</td>
+</tr>
+<tr class="odd">
+<td align="left">Vlad (134)</td>
+<td align="right">0.06</td>
+</tr>
+<tr class="even">
+<td align="left">Doris Abe</td>
+<td align="right">0.11</td>
+</tr>
+<tr class="odd">
+<td align="left">Kätliin (123)</td>
+<td align="right">0.20</td>
+</tr>
+<tr class="even">
+<td align="left">Maarja</td>
+<td align="right">0.22</td>
+</tr>
+<tr class="odd">
+<td align="left">Andreas Tulver</td>
+<td align="right">0.25</td>
+</tr>
+<tr class="even">
+<td align="left">Richard</td>
+<td align="right">0.27</td>
+</tr>
+<tr class="odd">
+<td align="left">Kaur (234)</td>
+<td align="right">0.33</td>
+</tr>
+<tr class="even">
+<td align="left">Andres Lestal</td>
+<td align="right">1.01</td>
+</tr>
+<tr class="odd">
+<td align="left">Uku-Laur</td>
+<td align="right">1.28</td>
+</tr>
+<tr class="even">
+<td align="left">Kristin (24)</td>
+<td align="right">1.42</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>hist(total_mean,
+     main = &quot;Keskmised spiikripunktid&quot;,
+     xlab = &quot;Punktid&quot;,
+     ylab = &quot;Sagedus&quot;,
+     xlim = c(60, 80),
+     breaks = 6)
+
+abline(v = mean(total_mean, na.rm = T),
+       col = &quot;blue&quot;,
+       lwd = 2.5)
+
+legend(73, 20,
+       c(&quot;Aritm keskmine&quot;),
+       lwd = c(2.5),
+       col = c(&quot;blue&quot;))</code></pre>
+<p><img src="kkemv2_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>plot(c(mean(r1_mean, na.rm = T), mean(r2_mean, na.rm = T), mean(r3_mean, na.rm = T), mean(r4_mean, na.rm = T), mean(r5_mean, na.rm = T)),
+     main = &quot;Keskmised spiikripunktid läbi voorude&quot;,
+     xlab = &quot;Voor&quot;,
+     ylab = &quot;Punkte&quot;,
+     ylim = c(68, 72),
+     type = &quot;b&quot;)</code></pre>
+<p><img src="kkemv2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>ballots = tab[, c(2, 33:47)]
+
+r1_ballots = rowSums(data.matrix(ballots[, c(2:4)]), na.rm = T)
+r2_ballots = rowSums(data.matrix(ballots[, c(5:7)]), na.rm = T)
+r3_ballots = rowSums(data.matrix(ballots[, c(8:10)]), na.rm = T)
+r4_ballots = rowSums(data.matrix(ballots[, c(11:13)]), na.rm = T)
+r5_ballots = rowSums(data.matrix(ballots[, c(14:16)]), na.rm = T)
+
+ballots = data.frame(ballots$Team, r1_ballots %/% 2, r2_ballots %/% 2, r3_ballots %/% 2, r4_ballots %/% 2, r5_ballots %/% 2)
+ballots = aggregate(.~ballots.Team, ballots, mean)
+
+wins = rowSums(ballots[, -1], na.rm = T)
+
+team_speaks = data.frame(tab$Speaker, tab$Team, total_mean)
+team_speaks = aggregate(.~tab.Team, team_speaks, mean)[, -2]
+
+plot(wins, team_speaks$total_mean,
+     main = &quot;Tiimi võitude ja keskmiste spiikripunktide suhe&quot;,
+     xlab = &quot;Võidud&quot;,
+     ylab = &quot;Spiikripunktid&quot;)
+
+abline(lm(team_speaks$total_mean~wins),
+       col = &quot;blue&quot;,
+       lwd =2)</code></pre>
+<p><img src="kkemv2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
